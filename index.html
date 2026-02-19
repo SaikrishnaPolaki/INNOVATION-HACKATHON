@@ -7,9 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
     :root {
-        --bg: #030303;
+        --bg: #000000;
         --text: #ffffff;
         --primary: #8b5cf6;
         --secondary: #06b6d4;
@@ -50,7 +51,7 @@
         border-radius: 50%;
         background: radial-gradient(circle, var(--primary), transparent 70%);
         filter: blur(100px);
-        opacity: 0.15;
+        opacity: 0.00;
         z-index: -1;
         pointer-events: none;
         animation: float 20s infinite alternate;
@@ -168,6 +169,43 @@
         max-width: 600px;
         height: auto;
     }
+
+    .logo-center-text {
+        flex: 1;
+        max-width: 650px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    /* Main Title */
+    .logo-center-text .main-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        line-height: 1.1;
+        letter-spacing: 2px;
+    }
+
+    /* Thin Line */
+    .logo-center-text .divider-line {
+        width: 80%;
+        height: 1px;
+        background: #ffffff;
+        margin: 12px auto;
+        opacity: 0.7;
+    }
+
+    /* Address Text */
+    .logo-center-text .address-text {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: normal;
+        opacity: 0.65;
+    }
+
+
+
 
 
     /* ================= Accreditation Banner ================= */
@@ -374,7 +412,18 @@
 
         <div class="top-institutional-bar">
             <img src="assets/images/KPRIT-JNTUH-Logo.png" class="logo-left" alt="KPRIT Logo">
-            <img src="assets/images/KPRES-Logo.png" class="logo-center" alt="Kommuri Pratap Reddy Educational Society">
+             <div class="logo-center-text">
+                <div class="main-title">
+                    KOMMURI PRATAP REDDY<br>
+                    EDUCATIONAL SOCIETY
+                </div>
+
+                <div class="divider-line"></div>
+
+                <div class="address-text">
+                    Ghatkesar, Hyderabad, Ghanpur, Telangana 500088
+                </div>
+            </div>
             <img src="assets/images/KPRIT-OU-Logo.png" class="logo-right" alt="KPRIT College of Engineering">
         </div>
 
@@ -393,7 +442,7 @@
         <div id="home-page" class="page-content active">
             <section class="hero">
                 <div class="hero-badge">TECHNICAL FESTIVAL 2026</div>
-                <h1>Innovation<br><span style="color: #666;">Marathon</span></h1>
+                <h1>Innovation<br><span style="color: #666;">Hackathon</span></h1>
                 <p>The ultimate Two-Day collision of technology, creativity, and student excellence. Where the future is built by you.</p>
 
                 <div class="btn-group">
