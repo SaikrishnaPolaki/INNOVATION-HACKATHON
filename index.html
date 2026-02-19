@@ -396,43 +396,46 @@
     }
 
     /* ========================= MOBILE OPTIMIZATION ========================= */
-   @media (max-width: 768px) {
+    @media (max-width: 768px) {
 
-    .accreditation-bar {
-        width: 100%;
-    }
+        .top-institutional-bar {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: nowrap; /* Prevent stacking */
+        }
 
-    .top-institutional-bar {
-        flex-direction: row;      /* KEEP HORIZONTAL */
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: 0 10px;
-    }
+        .logo-left,
+        .logo-right {
+            width: 70px;
+            flex-shrink: 0;
+        }
 
-    .logo-left,
-    .logo-right {
-        width: 80px;              /* smaller for mobile */
-    }
+        .logo-center-text {
+            flex: 1;
+            text-align: center;
+            white-space: nowrap; /* Prevent word breaking */
+        }
 
-    .logo-center-text {
-        max-width: 60%;
-    }
+        .logo-center-text .main-title {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
 
-    .logo-center-text .main-title {
-        font-size: 1rem;
-        letter-spacing: 1px;
-    }
+        .logo-center-text .address-text {
+            font-size: 0.65rem;
+        }
 
-    .logo-center-text .address-text {
-        font-size: 0.7rem;
-    }
+        .accreditation-bar {
+            width: 100%;
+        }
 
-    .accreditation-logo {
-        width: 100%;
-        height: auto;
+        .accreditation-logo {
+            width: 100%;
+            height: auto;
+        }
     }
-}
 
 
 
