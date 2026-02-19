@@ -398,36 +398,42 @@
     /* ========================= MOBILE OPTIMIZATION ========================= */
    @media (max-width: 768px) {
 
-        .accreditation-bar {
-            width: 100%;   /* Increase container width only for mobile */
-        }
-
-        .top-institutional-bar {
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 0;   /* remove desktop padding */
-        }
-
-        .logo-left,
-        .logo-right {
-            width: 120px;
-            flex-shrink: 0;   /* keep proper sizing */
-        }
-
-        .logo-center {
-            width: 220px;
-            max-width: 100%;
-            flex: none;   /* override desktop flex:1 */
-        }
-
-        .accreditation-logo {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-        }
+    .accreditation-bar {
+        width: 100%;
     }
+
+    .top-institutional-bar {
+        flex-direction: row;      /* KEEP HORIZONTAL */
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0 10px;
+    }
+
+    .logo-left,
+    .logo-right {
+        width: 80px;              /* smaller for mobile */
+    }
+
+    .logo-center-text {
+        max-width: 60%;
+    }
+
+    .logo-center-text .main-title {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .logo-center-text .address-text {
+        font-size: 0.7rem;
+    }
+
+    .accreditation-logo {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 
 
