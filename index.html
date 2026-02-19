@@ -234,6 +234,7 @@
 
     /* Hero Section */
     .hero {
+        position: relative;   /* ADD THIS */
         min-height: 85vh;
         display: flex;
         flex-direction: column;
@@ -241,7 +242,9 @@
         align-items: center;
         text-align: center;
         padding: 0 5%;
+        overflow: hidden;     /* ADD THIS */
     }
+
 
     .hero-badge {
         padding: 6px 16px;
@@ -266,10 +269,35 @@
 
     .hero p {
         max-width: 600px;
-        color: #999;
+        color: #f5f5f5;
         font-size: 1.25rem;
         margin-bottom: 3rem;
     }
+
+    .hero-bg-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        width: 1200px;              /* adjust if needed */
+        max-width: 90%;
+        height: auto;
+
+        opacity: 0.15;             /* subtle background look */
+        z-index: 0;
+        pointer-events: none;
+        filter: drop-shadow(0 0 40px rgba(139,92,246,0.3));
+
+    }
+
+    .hero > *:not(.hero-bg-image) {
+        position: relative;
+        z-index: 1;
+    }
+
+
+
 
     /* Buttons */
     .btn-group { display: flex; gap: 1.5rem; }
@@ -441,13 +469,14 @@
         <!-- --- HOME PAGE --- -->
         <div id="home-page" class="page-content active">
             <section class="hero">
+                <!-- --- Tech-Hub-Removed-Bg.png As A Background To Hero Section --- -->
+                <img src="assets/images/Tech-Hub-Removed-Bg.png" 
+                class="hero-bg-image" 
+                alt="Tech Hub Background">
+
                 <div class="hero-badge">TECHNICAL FESTIVAL 2026</div>
                 <h1>Innovation<br><span style="color: #666;">Hackathon</span></h1>
                 <p>The ultimate Two-Day collision of technology, creativity, and student excellence. Where the future is built by you.</p>
-
-                <div class="btn-group">
-                    <button class="btn btn-primary" onclick="scrollToId('events-section')">Explore Events</button>
-                </div>
 
             </section>
 
@@ -459,6 +488,14 @@
                         Innovation Marathon is more than just a festival. It's an ecosystem designed to push your technical boundaries. 
                         From deep-level debugging to high-level system design, we provide the platform; you provide the brilliance.
                     </p>
+
+                    <div style="margin-top: 2rem;">
+                        <button class="btn btn-primary" onclick="scrollToId('events-section')">
+                            Explore Events
+                        </button>
+                    </div>
+
+
                 </div>
             </section>
 
