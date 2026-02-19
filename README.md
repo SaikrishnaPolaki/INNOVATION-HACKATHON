@@ -1,1 +1,1 @@
-# INNOVATION-HACKATHON
+# KPRIT-Innovation-Hackathon-Website

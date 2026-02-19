@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Marathon 2026 | College Technical Event</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --bg: #030303;
+        --text: #ffffff;
+        --primary: #8b5cf6;
+        --secondary: #06b6d4;
+        --accent: #f43f5e;
+        --glass: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --card-bg: rgba(10, 10, 10, 0.6);
+        --font-main: 'Plus Jakarta Sans', sans-serif;
+        --font-heading: 'Space Grotesk', sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: var(--font-main);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #333; }
+
+    /* Background Glow */
+    .glow-sphere {
+        position: fixed;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, var(--primary), transparent 70%);
+        filter: blur(100px);
+        opacity: 0.15;
+        z-index: -1;
+        pointer-events: none;
+        animation: float 20s infinite alternate;
+    }
+
+    @keyframes float {
+        from { transform: translate(-10%, -10%); }
+        to { transform: translate(20%, 20%); }
+    }
+
+    /* App Container */
+    .app-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Header */
+    header {
+        width: 100%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1.5rem 2rem;
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Text */
+    .logo {
+        font-family: var(--font-heading);
+        font-size: 1.4rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+        background: linear-gradient(135deg, #fff 0%, #888 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav a {
+        color: #888;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: #fff;
+    }
+
+    /* Page Animation */
+    .page-content { display: none; animation: fadeIn 0.6s ease-out; }
+    .page-content.active { display: block; }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ================= Institutional Top Banner ================= */
+
+    .top-institutional-wrapper {
+        width: 100%;
+        padding: 2rem 5% 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* First Row – 3 Logos */
+    .top-institutional-bar {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto 1.5rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .top-institutional-bar img {
+        object-fit: contain;
+        transition: 0.3s ease;
+    }
+
+    .top-institutional-bar img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Side Logos */
+    .logo-left,
+    .logo-right {
+        width: 140px;
+        flex-shrink: 0;
+    }
+
+
+    /* Center College Name */
+    .logo-center {
+        flex: 1;
+        max-width: 600px;
+        height: auto;
+    }
+
+
+    /* ================= Accreditation Banner ================= */
+
+    .accreditation-bar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .accreditation-logo {
+        width: 95%;
+        max-width: 1200px;
+        height: auto;
+        object-fit: contain;
+        opacity: 0.95;
+        transition: 0.3s ease;
+    }
+
+    .accreditation-logo:hover {
+        transform: scale(1.02);
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 5%;
+    }
+
+    .hero-badge {
+        padding: 6px 16px;
+        background: rgba(139, 92, 246, 0.1);
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        color: var(--primary);
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(3.5rem, 10vw, 7rem);
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 2rem;
+        letter-spacing: -3px;
+    }
+
+    .hero p {
+        max-width: 600px;
+        color: #999;
+        font-size: 1.25rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Buttons */
+    .btn-group { display: flex; gap: 1.5rem; }
+
+    .btn {
+        padding: 1rem 2.5rem;
+        border-radius: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btn-primary {
+        background: #fff;
+        color: #000;
+    }
+
+    .btn-primary:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: #fff;
+        border: 1px solid var(--glass-border);
+    }
+
+    .btn-outline:hover {
+        background: var(--glass);
+    }
+
+    /* Grid Sections */
+    .section-container {
+        padding: 120px 8%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Technical Arena Section */
+    #events-section {
+        padding-top: 10px; /* Reduce space from top */
+        padding-bottom: 120px; /* Keep some space below */
+    }
+
+    #events-section .grid-header {
+        margin-bottom: 2rem; /* Reduce space between header and event cards */
+    }
+
+    #events-section .grid-header h2 {
+        font-size: 2.5rem; /* optional: adjust size */
+        margin-bottom: 0.5rem; /* tighten space under heading */
+    }
+
+    #events-section .grid-header p {
+        margin-bottom: 2rem; /* spacing to cards */
+        color: #888;
+    }
+
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 2.5rem;
+    }
+
+    /* Cards */
+    .card {
+        background: var(--card-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 28px;
+        padding: 2.5rem;
+        transition: 0.4s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        background: rgba(20, 20, 20, 0.8);
+    }
+
+    /* Detail Grid */
+    .detail-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: auto;
+        padding: 6rem 8%;
+        border-top: 1px solid var(--glass-border);
+        text-align: center;
+    }
+
+    /* ========================= MOBILE OPTIMIZATION ========================= */
+   @media (max-width: 768px) {
+
+        .top-institutional-bar {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 0;   /* remove desktop padding */
+        }
+
+        .logo-left,
+        .logo-right {
+            width: 120px;
+            flex-shrink: 0;   /* keep proper sizing */
+        }
+
+        .logo-center {
+            width: 220px;
+            max-width: 100%;
+            flex: none;   /* override desktop flex:1 */
+        }
+
+        .accreditation-logo {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="top-institutional-wrapper">
+
+        <div class="top-institutional-bar">
+            <img src="assets/images/KPRIT-JNTUH-Logo.png" class="logo-left" alt="KPRIT Logo">
+            <img src="assets/images/KPRES-Logo.png" class="logo-center" alt="Kommuri Pratap Reddy Educational Society">
+            <img src="assets/images/KPRIT-OU-Logo.png" class="logo-right" alt="KPRIT College of Engineering">
+        </div>
+
+        <div class="accreditation-bar">
+            <img src="assets/images/College-Accredations-Logo.png" class="accreditation-logo" alt="College Accreditations">
+        </div>
+
+    </div>
+
+
+    <div class="glow-sphere" style="top: -10%; left: -10%;"></div>
+    <div class="glow-sphere" style="bottom: -10%; right: -10%; background: var(--secondary);"></div>
+
+    <div class="app-container">
+        <!-- --- HOME PAGE --- -->
+        <div id="home-page" class="page-content active">
+            <section class="hero">
+                <div class="hero-badge">TECHNICAL FESTIVAL 2026</div>
+                <h1>Innovation<br><span style="color: #666;">Marathon</span></h1>
+                <p>The ultimate Two-Day collision of technology, creativity, and student excellence. Where the future is built by you.</p>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="scrollToId('events-section')">Explore Events</button>
+                </div>
+
+            </section>
+
+
+            <section id="about-section" class="section-container">
+                <div class="detail-card" style="text-align: center; border-color: var(--primary);">
+                    <h2 style="font-size: 3.5rem;">2 Days. 6 Events.<br>Infinite Possibilities.</h2>
+                    <p style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem; line-height: 1.8;">
+                        Innovation Marathon is more than just a festival. It's an ecosystem designed to push your technical boundaries. 
+                        From deep-level debugging to high-level system design, we provide the platform; you provide the brilliance.
+                    </p>
+                </div>
+            </section>
+
+            <section id="events-section" class="section-container">
+                <div class="grid-header">
+                    <h2>Technical Arena</h2>
+                    <h5> <p style="color: #666;">Choose your battlefield. Compete with the best minds across departments.</p></h5>
+                </div>
+                <div class="events-grid" id="events-list">
+                    <!-- Events injected by JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- --- DETAIL PAGE --- -->
+        <div id="detail-page" class="page-content">
+            <div class="section-container detail-view">
+                <div class="detail-hero">
+                    <div id="detail-tag" class="hero-badge" style="margin-bottom: 1rem;">CATEGORY</div>
+                    <h1 id="detail-title" style="font-family: var(--font-heading); font-size: 5rem; letter-spacing: -2px;">Event Title</h1>
+                    <p id="detail-subtitle" style="max-width: 800px; margin: 1rem auto; color: #888;">Short catchphrase or subtitle about the event.</p>
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-content">
+                        <div class="detail-card">
+                            <h2>The Brief</h2>
+                            <p id="detail-desc" style="font-size: 1.1rem; line-height: 1.8; color: #999;">Detailed description goes here.</p>
+                        </div>
+                        <div class="detail-card">
+                            <h2>The Rules</h2>
+                            <ul id="detail-rules" style="list-style: none;">
+                                <!-- Rules injected -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="detail-sidebar">
+                        <div class="detail-card" style="border-color: var(--primary);">
+                            <h2>Event Intel</h2>
+                            <div class="info-pill"><span>Date</span><span id="detail-date" style="font-weight: 700;">-</span></div>
+                            <div class="info-pill"><span>Venue</span><span id="detail-venue" style="font-weight: 700;">-</span></div>
+                            <div class="info-pill"><span>Team Size</span><span id="detail-team" style="font-weight: 700;">-</span></div>
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 2rem; padding: 1.2rem;">Confirm Registration</button>
+                        </div>
+                        <div class="detail-card">
+                            <h2>Prizes</h2>
+                            <p id="detail-prizes" style="font-size: 1.5rem; font-weight: 800; color: var(--secondary);">$2,500 Prize Pool</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="logo" style="margin-bottom: 1.5rem;">KPRES-IM-2026</div>
+            <p style="color: #ffffff;">&copy; 2026 KPRES Innovation Marathon. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const eventsData = {
+            hackathon: {
+                file: "hackathon.html"
+            },
+            techbuzz: {
+                file: "techbuzz.html"
+            },
+            prompt: {
+                file: "prompt-writing.html"
+            },
+            debugging: {
+                file: "debugging.html"
+            },
+            techhunt: {
+                file: "techhunt.html"
+            },
+            esports: {
+                file: "photography-esports.html"
+            }
+        };
+
+            // --- Core Engine ---
+            function init() {
+                renderEvents();
+                handleScroll();
+            }
+
+            function renderEvents() {
+                const grid = document.getElementById('events-list');
+                grid.innerHTML = `
+                    <div class="card" onclick="openEventPage('hackathon')">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">FLAGSHIP EVENT</div>
+                        <h3>Innovation Hackathon</h3>
+                        <p>24 Hours. One Prototype. Unlimited Impact.</p>
+                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Enter Hackathon <span style="font-size: 1.2rem;">→</span>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="openEventPage('techbuzz')">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">TECHNICAL QUIZ</div>
+                        <h3>Tech Buzz</h3>
+                        <p>Fastest fingers, sharpest minds.</p>
+                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Face the Buzz <span style="font-size: 1.2rem;">→</span>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="openEventPage('prompt')">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">AI ARENA</div>
+                        <h3>Prompt Writing</h3>
+                        <p>The art of speaking to machines.</p>
+                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Enter AI Arena <span style="font-size: 1.2rem;">→</span>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="openEventPage('debugging')">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">CODING CHALLENGE</div>
+                        <h3>Debugging</h3>
+                        <p>Find the needle in the stack trace.</p>
+                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Open Challenge <span style="font-size: 1.2rem;">→</span>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="openEventPage('techhunt')">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">EXPERIENTIAL</div>
+                        <h3>Tech Hunt</h3>
+                        <p>Decode the campus.</p>
+                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Start Hunt <span style="font-size: 1.2rem;">→</span>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="openEventPage('esports')">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">CREATIVITY & COMPETITIVE GAMING</div>
+                        <h3>Photography & E-Sports</h3>
+                        <p>Enter the battlefield.</p>
+                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            Capture & Compete <span style="font-size: 1.2rem;">→</span>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function openEventPage(eventId) {
+                const fileName = eventsData[eventId].file;
+                window.location.href = "events/" + fileName;
+            }
+
+            function scrollToId(id) {
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+
+            init();
+    </script>
+</body>
+</html>
