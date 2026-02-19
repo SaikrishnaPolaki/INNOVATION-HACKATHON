@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Buzz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #030303;
+            --text: #ffffff;
+            --primary: #8b5cf6;
+            --secondary: #06b6d4;
+            --glass: rgba(255,255,255,0.03);
+            --glass-border: rgba(255,255,255,0.08);
+            --card-bg: rgba(10,10,10,0.6);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-heading: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+        }
+
+        /* Glow Background */
+        .glow-sphere {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary), transparent 70%);
+            filter: blur(100px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 75%;
+            transform: translateX(-50%);
+            width: 10%;
+            max-width: 1200px;
+            padding: 1rem 2rem;
+            background: rgba(10,10,10,0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #888;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        header a:hover {
+            color: #fff;
+        }
+
+        /* Hero */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            padding: 6px 16px;
+            background: rgba(139,92,246,0.1);
+            border: 1px solid rgba(139,92,246,0.2);
+            color: var(--primary);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 8vw, 5rem);
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: #888;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* Sections */
+        .section-container {
+            padding: 100px 8%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Glass Card */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.5s cubic-bezier(0.2,1,0.3,1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.2);
+            background: rgba(20,20,20,0.8);
+        }
+
+        .card p, .card li {
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            padding-left: 1.2rem;
+        }
+
+        .highlight-warning {
+            margin-top: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #fff;
+            color: #000;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: 0.3s;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255,255,255,0.2);
+        }
+
+        /* Footer */
+        footer {
+            padding: 5rem 8%;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            header { width: 95%; padding: 0.8rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="glow-sphere" style="top:-10%;left:-10%;"></div>
+<div class="glow-sphere" style="bottom:-10%;right:-10%;background:var(--secondary);"></div>
+
+<header>
+    <a href="../index.html">← Back to Home</a>
+</header>
+
+<section class="hero">
+    <h1>Tech Buzz</h1>
+    <p>Rapid-fire technical Quiz Competition.</p>
+</section>
+
+<div class="section-container">
+
+    <h2 class="section-title">Activity Objective</h2>
+    <div class="card">
+        <p>Participants will be given a set of code snippets with intentional bugs. The goal is to identify and fix the bugs within a limited time frame.</p>
+    </div>
+
+    <h2 class="section-title">Activity Coordinator</h2>
+    <div class="card">
+        <ul>
+            <li>Name-1</li>
+            <li>Name-2</li>
+            <li>Name-3</li>
+        </ul>
+    </div>
+   
+    <h2 class="section-title">Date & Venue</h2>
+    <div class="card">
+        <ul>
+            <li>Mention The Exact Date When The Activity Is Conducted</li> 
+            <!-- Deepesh We Will Use Emojis Like Calender Symbol & etc. -->
+            <li>Mention The Exact Location Where  The Activity Is Conducted</li> 
+            <!-- Deepesh We Will Use Emojis Like Landmark, Building, etc. -->
+            <p><strong>Date:</strong> 12–13 March 2026</p>
+            <p><strong>Venue:</strong> Innovation Lab – Block C</p>
+    </ul>
+</div>
+
+<h2 class="section-title">Activity Timeline</h2>
+<div class="card">
+    <ul>
+        <li>Mention The Exact Timeline Of The Activity.</li> 
+        <li>Start And End Timelines.</li> 
+        <!-- Deepesh We Will Use Emojis Like Calender Symbol & etc. -->
+        <p><strong>Start Time:</strong> 10:00 AM</p>
+        <p><strong>Expected End:</strong> 02:00 PM (Next Day)</p>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Team Formation</h2>
+    <div class="card">
+        <ul>
+            <li>Mention The Exact Complete And Effective Team Formation Process.</li> 
+        </ul>
+    </div>
+
+    <h2 class="section-title">Rules</h2>
+    <div class="card">
+        <ol>
+            <li>Fresh development only.</li>
+            <li>No plagiarism allowed.</li>
+            <li>Teams must present live demo.</li>
+            <li>Judges’ decision is final.</li>
+        </ol>
+
+        <p class="highlight-warning">
+            Please read the complete guidelines carefully. No repetition of instructions will be provided during the activity.
+        </p>
+    </div>
+
+    
+    <h2 class="section-title">Complete Activity Workflow</h2>
+    <div class="card">
+        <ul>
+            <li>Mention The Complete Activity Workflow From Start To End.</li> 
+        </ul>
+    </div>
+
+    <h2 class="section-title">Judging Criteria</h2>
+    <div class="card">
+        <ul>
+            <li>Clearly Define The Basis On Which The Final Winner Will Be Selected.</li> 
+        </ul>
+    </div>
+
+    <h2 class="section-title">Rewards And Prizes</h2>
+    <div class="card">
+        <ul>
+            <li>Mention All The Rewards And Prizes For The Each And Every Activity.</li> 
+            <p><strong>1st Prize:</strong> ₹10,000 + Trophy + Certificate</p>
+            <p><strong>2nd Prize:</strong> ₹5,000 + Medal + Certificate</p>
+            <p><strong>Participation:</strong> Digital Certificates</p>
+        </ul>
+    </div>
+
+    <div class="btn-wrapper">
+        <a href="https://www.github.com/laxminayanan" target="_blank" class="btn">Register Now</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 KPRES Innovation Marathon. All rights reserved.
+</footer>
+</body>
+</html>
+
+
