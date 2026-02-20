@@ -451,47 +451,127 @@
     /* ========================= MOBILE OPTIMIZATION ========================= */
     @media (max-width: 768px) {
 
-    .top-institutional-bar {
-        flex-direction: row;
-        justify-content: space-between;   /* 🔥 FIXED */
-        align-items: center;
-        gap: 8px;                         /* reduced gap */
-        padding: 0 10px;                  /* reduce side padding */
-        flex-wrap: nowrap;
+        .top-institutional-bar {
+            flex-direction: row;
+            justify-content: space-between;   /* 🔥 FIXED */
+            align-items: center;
+            gap: 8px;                         /* reduced gap */
+            padding: 0 10px;                  /* reduce side padding */
+            flex-wrap: nowrap;
+        }
+
+        .logo-left,
+        .logo-right {
+            width: 60px;                      /* 🔥 smaller logos */
+            flex-shrink: 0;
+        }
+
+        .logo-center-text {
+            flex: 1;
+            text-align: center;
+            white-space: normal;              /* 🔥 allow safe wrapping */
+        }
+
+        .logo-center-text .main-title {
+            font-size: 0.75rem;               /* smaller title */
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .logo-center-text .address-text {
+            font-size: 0.6rem;                /* smaller address */
+            line-height: 1.2;
+        }
+
+        .accreditation-bar {
+            width: 100%;
+        }
+
+        .accreditation-logo {
+            width: 100%;
+            height: auto;
+        }
     }
 
-    .logo-left,
-    .logo-right {
-        width: 60px;                      /* 🔥 smaller logos */
-        flex-shrink: 0;
+    /* ================= RED NAV STRIP (NO WHITE BG) ================= */
+
+    .nav-strip {
+        width: 100%;
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: center;
     }
 
-    .logo-center-text {
-        flex: 1;
+    /* Desktop */
+    .nav-desktop {
+        display: flex;
+        gap: 1.2rem;
+    }
+
+    .nav-box {
+        background: #e3342f;
+        color: #ffffff;
+        padding: 0.7rem 1.6rem;
+        border-radius: 14px;
+        font-weight: 800;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: 0.25s ease;
+    }
+
+    .nav-box:hover {
+        transform: translateY(-3px);
+        opacity: 0.9;
+    }
+
+    /* Mobile */
+    .nav-mobile {
+        display: none;
+        position: relative;
+    }
+
+    .menu-btn {
+        background: #e3342f;
+        color: #000000;
+        border: none;
+        padding: 0.8rem 2.2rem;
+        border-radius: 16px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        flex-direction: column;
+        gap: 0.6rem;
+        z-index: 1000;
+    }
+
+    .mobile-menu a {
+        background: #e3342f;
+        color: #000000;
+        padding: 0.6rem 1.2rem;
+        border-radius: 12px;
+        font-weight: 800;
+        text-decoration: none;
         text-align: center;
-        white-space: normal;              /* 🔥 allow safe wrapping */
     }
 
-    .logo-center-text .main-title {
-        font-size: 0.75rem;               /* smaller title */
-        letter-spacing: 0.5px;
-        line-height: 1.2;
-    }
+    /* Responsive */
+    @media (max-width: 768px) {
+        .nav-desktop {
+            display: none;
+        }
 
-    .logo-center-text .address-text {
-        font-size: 0.6rem;                /* smaller address */
-        line-height: 1.2;
+        .nav-mobile {
+            display: block;
+        }
     }
-
-    .accreditation-bar {
-        width: 100%;
-    }
-
-    .accreditation-logo {
-        width: 100%;
-        height: auto;
-    }
-}
+   
 </style>
 
 </head>
@@ -519,6 +599,33 @@
         <div class="accreditation-bar">
             <img src="assets/images/College-Accredations-Logo.png" class="accreditation-logo" alt="College Accreditations">
         </div>
+
+        <!-- ================= RED NAV STRIP (NO WHITE BG) ================= -->
+        <section class="nav-strip">
+
+            <!-- Desktop -->
+            <div class="nav-desktop">
+                <a href="#home-page" class="nav-box">Home</a>
+                <a href="#about-section" class="nav-box">About</a>
+                <a href="#events-section" class="nav-box">Theme</a>
+                <a href="#schedule-section" class="nav-box">Schedule</a>
+                <a href="#events-section" class="nav-box">Explore Events</a>
+            </div>
+
+            <!-- Mobile -->
+            <div class="nav-mobile">
+                <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+                <div class="mobile-menu" id="mobileMenu">
+                    <a href="#home-page" onclick="toggleMenu()">Home</a>
+                    <a href="#about-section" onclick="toggleMenu()">About</a>
+                    <a href="#events-section" onclick="toggleMenu()">Theme</a>
+                    <a href="#schedule-section" onclick="toggleMenu()">Schedule</a>
+                    <a href="#events-section" onclick="toggleMenu()">Explore Events</a>
+                </div>
+            </div>
+
+        </section>
 
     </div>
 
@@ -734,101 +841,106 @@
             }
         };
 
-            // --- Core Engine ---
-            function init() {
-                renderEvents();
-                handleScroll();
-            }
+        // --- Core Engine ---
+        function init() {
+            renderEvents();
+            handleScroll();
+        }
 
-            function renderEvents() {
-                const grid = document.getElementById('events-list');
-                grid.innerHTML = `
-                    <div class="card" onclick="openEventPage('hackathon')">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">FLAGSHIP EVENT</div>
-                        <h3>Innovation Hackathon</h3>
-                        <p>24 Hours. One Prototype. Unlimited Impact.</p>
-                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Enter Hackathon <span style="font-size: 1.2rem;">→</span>
-                        </div>
+        function renderEvents() {
+            const grid = document.getElementById('events-list');
+            grid.innerHTML = `
+                <div class="card" onclick="openEventPage('hackathon')">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
-
-                    <div class="card" onclick="openEventPage('techbuzz')">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">TECHNICAL QUIZ</div>
-                        <h3>Tech Buzz</h3>
-                        <p>Fastest fingers, sharpest minds.</p>
-                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Face the Buzz <span style="font-size: 1.2rem;">→</span>
-                        </div>
+                    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">FLAGSHIP EVENT</div>
+                    <h3>Innovation Hackathon</h3>
+                    <p>24 Hours. One Prototype. Unlimited Impact.</p>
+                    <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Enter Hackathon <span style="font-size: 1.2rem;">→</span>
                     </div>
+                </div>
 
-                    <div class="card" onclick="openEventPage('prompt')">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">AI ARENA</div>
-                        <h3>Prompt Writing</h3>
-                        <p>The art of speaking to machines.</p>
-                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Enter AI Arena <span style="font-size: 1.2rem;">→</span>
-                        </div>
+                <div class="card" onclick="openEventPage('techbuzz')">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
-
-                    <div class="card" onclick="openEventPage('debugging')">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">CODING CHALLENGE</div>
-                        <h3>Debugging</h3>
-                        <p>Find the needle in the stack trace.</p>
-                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Open Challenge <span style="font-size: 1.2rem;">→</span>
-                        </div>
+                    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">TECHNICAL QUIZ</div>
+                    <h3>Tech Buzz</h3>
+                    <p>Fastest fingers, sharpest minds.</p>
+                    <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Face the Buzz <span style="font-size: 1.2rem;">→</span>
                     </div>
+                </div>
 
-                    <div class="card" onclick="openEventPage('techhunt')">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">EXPERIENTIAL</div>
-                        <h3>Tech Hunt</h3>
-                        <p>Decode the campus.</p>
-                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Start Hunt <span style="font-size: 1.2rem;">→</span>
-                        </div>
+                <div class="card" onclick="openEventPage('prompt')">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
-
-                    <div class="card" onclick="openEventPage('esports')">
-                        <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">CREATIVITY & COMPETITIVE GAMING</div>
-                        <h3>Photography & E-Sports</h3>
-                        <p>Enter the battlefield.</p>
-                        <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Capture & Compete <span style="font-size: 1.2rem;">→</span>
-                        </div>
+                    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">AI ARENA</div>
+                    <h3>Prompt Writing</h3>
+                    <p>The art of speaking to machines.</p>
+                    <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Enter AI Arena <span style="font-size: 1.2rem;">→</span>
                     </div>
-                `;
-            }
+                </div>
 
-            function openEventPage(eventId) {
-                const fileName = eventsData[eventId].file;
-                window.location.href = "events/" + fileName;
-            }
+                <div class="card" onclick="openEventPage('debugging')">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">CODING CHALLENGE</div>
+                    <h3>Debugging</h3>
+                    <p>Find the needle in the stack trace.</p>
+                    <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Open Challenge <span style="font-size: 1.2rem;">→</span>
+                    </div>
+                </div>
 
-            function scrollToId(id) {
-                const el = document.getElementById(id);
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+                <div class="card" onclick="openEventPage('techhunt')">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">EXPERIENTIAL</div>
+                    <h3>Tech Hunt</h3>
+                    <p>Decode the campus.</p>
+                    <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Start Hunt <span style="font-size: 1.2rem;">→</span>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openEventPage('esports')">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">CREATIVITY & COMPETITIVE GAMING</div>
+                    <h3>Photography & E-Sports</h3>
+                    <p>Enter the battlefield.</p>
+                    <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                        Capture & Compete <span style="font-size: 1.2rem;">→</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+        
+        function openEventPage(eventId) {
+            const fileName = eventsData[eventId].file;
+            window.location.href = "events/" + fileName;
+        }
+
+        function scrollToId(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
 
 
-            init();
+        init();
     </script>
 </body>
 </html>
