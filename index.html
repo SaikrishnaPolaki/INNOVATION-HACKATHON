@@ -236,18 +236,20 @@
 
 
     /* Hero Section */
-    .hero {
-        position: relative;   /* ADD THIS */
+   .hero {
+        position: relative;
         min-height: 100vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        text-align: center;
-        padding: 0 5%;
-        overflow: visible;     /* ADD THIS */
+        justify-content: center;
+        overflow: hidden;
     }
 
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
 
     .hero-badge {
         padding: 6px 16px;
@@ -282,14 +284,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        
-        max-width: 90%;
-        max-height: 90vh;
-
-        object-fit: contain;
-        opacity: 0.15;
-        z-index: 0;
-        pointer-events: none;
+        max-height: 200vh;
+        width: auto;
+        opacity: 0.12;
+        z-index: 1;
     }
 
     .hero > *:not(.hero-bg-image) {
@@ -396,6 +394,60 @@
         text-align: center;
     }
 
+
+    /* Patron Section */
+
+    .patron-section {
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .patron-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        color: #00f5ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .patron-block {
+        margin-bottom: 30px;
+    }
+
+    .patron-row {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .patron-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px 30px;
+        border-radius: 12px;
+        min-width: 250px;
+        transition: 0.3s ease;
+    }
+
+    .patron-card:hover {
+        transform: translateY(-5px);
+        background: rgba(0, 245, 255, 0.1);
+    }
+
+    .patron-name {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .patron-role {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-top: 5px;
+    }
+
     /* ========================= MOBILE OPTIMIZATION ========================= */
     @media (max-width: 768px) {
 
@@ -477,16 +529,114 @@
     <div class="app-container">
         <!-- --- HOME PAGE --- -->
         <div id="home-page" class="page-content active">
-            <section class="hero">
-                <!-- --- Tech-Hub-Removed-Bg.png As A Background To Hero Section --- -->
-                <img src="assets/images/Tech-Hub-Removed-Bg.png" 
-                class="hero-bg-image" 
+        <section class="hero">
+
+            <img src="assets/images/Tech-Hub-Removed-Bg.png"
+                class="hero-bg-image"
                 alt="Tech Hub Background">
-                <h1>Innovation<br><span style="color: #666;">Hackathon</span></h1>
-                <p>The ultimate Two-Day collision of technology, creativity, and student excellence. Where the future is built by you.</p>
+
+            <div class="hero-content">
+                <h1>
+                    Innovation<br>
+                    <span class="hero-sub">Hackathon</span>
+                </h1>
+
+                <p>
+                    The ultimate Two-Day collision of technology, creativity,
+                    and student excellence. Where the future is built by you.
+                </p>
+            </div>
+
+        </section>
+
+            <section class="patron-section">
+
+                <h2 class="patron-title">Chief Patron</h2>
+                <div class="patron-block">
+                    <p class="patron-name">Shri. Kommuri Pratap Reddy Garu</p>
+                    <p class="patron-role">Chairman - KPRES</p>
+                </div>
+
+                <h2 class="patron-title">Patrons</h2>
+                <div class="patron-row">
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. Prashanth Kommuri</p>
+                        <p class="patron-role">Vice Chairman - KPRES</p>
+                    </div>
+
+                    <div class="patron-card">
+                        <p class="patron-name">Ms. Kommuri Divya Sree</p>
+                        <p class="patron-role">Director - Strategy KPRES</p>
+                    </div>
+
+                    <div class="patron-card">
+                        <p class="patron-name">Prof. B. Sudheer Prem Kumar</p>
+                        <p class="patron-role">Director - KPRES</p>
+                    </div>
+                </div>
+                <div class="patron-row">
+                    <div class="patron-card">
+                        <p class="patron-name">Dr. S. Sreenath Kashyap</p>
+                        <p class="patron-role">Principal - KPRIT</p>
+                    </div>
+
+                    <div class="patron-card">
+                        <p class="patron-name">Dr. K. Sreenivasa Reddy</p>
+                        <p class="patron-role">Principal - KPRITCOE</p>
+                    </div>
+                </div>
+
+                <h2 class="patron-title">Organizers</h2>
+                <div class="patron-row">
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. Anish Kr. Srivastava</p>
+                        <p class="patron-role">Dean-Corporate Relation</p>
+                    </div>
+
+                    <div class="patron-card">
+                        <p class="patron-name">Dr. K. Vamshee Krishna</p>
+                        <p class="patron-role">CSE HOD & IIC Head</p>
+                    </div>
+
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. K. Anil Kumar</p>
+                        <p class="patron-role">Placement Head</p>
+                    </div>
+                    
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. S. Naresh Kumar</p>
+                        <p class="patron-role">Training Head</p>
+                    </div>
+                </div>
+
+                <h2 class="patron-title">Program Advisors</h2>
+                <div class="patron-row">
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. P. Sai Krishna</p>
+                    </div>
+
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. YVD Chandra Sekhar</p>
+                    </div>
+                    
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. S. Ragavendra</p>
+                    </div>
+                    
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. D. Ravindra Babu</p>
+                    </div>
+
+                    <div class="patron-card">
+                        <p class="patron-name">Mr. Umar Ali</p>
+                    </div>
+                    
+                    <div class="patron-card">
+                        <p class="patron-name">Ms. D. Gayatri Devi Reddy</p>
+                    </div>
+                </div>
 
             </section>
-
 
             <section id="about-section" class="section-container">
                 <div class="detail-card" style="text-align: center; border-color: var(--primary);">
