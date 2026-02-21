@@ -523,6 +523,24 @@
             width: 100%;
             height: auto;
         }
+
+
+        /* ================= EVENTS MOBILE FIX ================= */
+
+        .events-grid {
+            grid-template-columns: 1fr;   /* Makeing it single column */
+            gap: 1.5rem;
+        }
+
+        .events-grid .card {
+            max-width: 100%;
+        }
+
+        /* Remove centering behavior */
+        .events-grid .card:last-child:nth-child(odd) {
+            grid-column: auto;
+        }
+
     }
 
 
