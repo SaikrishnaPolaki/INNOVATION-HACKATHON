@@ -667,7 +667,7 @@
 .maintenance-content {
     max-width: 1200px;
     width: 100%;
-    background: linear-gradient(90deg, #b91c1c, #e3342f);
+    background: linear-gradient(90deg, #ffffff, #ffffff);
     border-radius: 16px;
     padding: 1.2rem 2rem;
     display: flex;
@@ -685,7 +685,7 @@
     font-size: 0.95rem;
     font-weight: 500;
     line-height: 1.6;
-    color: #ffffff;
+    color: #000000;
 }
 
 .maintenance-text strong {
@@ -698,6 +698,14 @@
     from { box-shadow: 0 0 15px rgba(227, 52, 47, 0.3); }
     to { box-shadow: 0 0 35px rgba(227, 52, 47, 0.6); }
 }
+
+
+.highlight-red {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
@@ -772,16 +780,20 @@
                 <span class="maintenance-icon">⚠</span>
                 <div class="maintenance-text">
                     <strong><h1> Maintenance Notice: </h1></strong>
-                    <h3> Our website is currently under scheduled maintenance. 
-                    Registration services are temporarily unavailable. 
-                    Please do not attempt to make any registrations at this time. 
-                    An official announcement will be made once the maintenance process is completed. 
-                    We appreciate your patience and understanding. </h3>
+                    <h3> Our website is currently under scheduled maintenance. Registration services are temporarily unavailable.
+                        <span class="highlight-red">
+                            Please do not attempt to make any registrations at this time.
+                        </span>
+                        An official announcement will be made once the maintenance process is completed. We appreciate your patience and understanding. 
+                    </h3>
                 </div>
             </div>
         </div>
 
     </div>
+
+
+
 
 
     <div class="glow-sphere" style="top: -10%; left: -10%;"></div>
