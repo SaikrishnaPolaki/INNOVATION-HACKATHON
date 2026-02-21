@@ -235,21 +235,44 @@
 
 
 
-    /* Hero Section */
-   .hero {
+    /* ================= HERO SECTION ================= */
+
+    .hero {
         position: relative;
         min-height: 100vh;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;        /* Perfect vertical center */
+        text-align: center;
         overflow: hidden;
     }
 
+    /* Background Logo (ONLY THIS — remove ::before completely) */
+    .hero-bg-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 75vh;           /* Prevents logo from becoming too large */
+        width: auto;
+        opacity: 0.12;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Hero Content */
     .hero-content {
         position: relative;
         z-index: 2;
         text-align: center;
     }
+
+    /* Optional slight visual correction (remove if not needed) */
+    /*
+    .hero-content {
+        transform: translateY(8px);
+    }
+    */
 
     .hero-badge {
         padding: 6px 16px;
@@ -278,23 +301,6 @@
         font-size: 1.25rem;
         margin-bottom: 3rem;
     }
-
-    .hero-bg-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-height: 200vh;
-        width: auto;
-        opacity: 0.12;
-        z-index: 1;
-    }
-
-    .hero > *:not(.hero-bg-image) {
-        position: relative;
-        z-index: 1;
-    }
-
 
 
 
@@ -923,6 +929,15 @@
         opacity: 1;
         visibility: visible;
     }
+
+
+    @media (min-width: 1024px) {
+    .hero {
+        min-height: 75vh;
+        align-items: flex-start;
+        padding-top: 120px;
+    }
+}
 
 </style>
 
