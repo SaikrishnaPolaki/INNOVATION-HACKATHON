@@ -650,6 +650,67 @@
             display: block;
         }
     }
+
+
+
+
+    /* ================= MAINTENANCE NOTICE ================= */
+
+.maintenance-notice {
+    width: 100%;
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.maintenance-content {
+    max-width: 1200px;
+    width: 100%;
+    background: linear-gradient(90deg, #b91c1c, #e3342f);
+    border-radius: 16px;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 0 25px rgba(227, 52, 47, 0.4);
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.maintenance-icon {
+    font-size: 1.8rem;
+}
+
+.maintenance-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.maintenance-text strong {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+    from { box-shadow: 0 0 15px rgba(227, 52, 47, 0.3); }
+    to { box-shadow: 0 0 35px rgba(227, 52, 47, 0.6); }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .maintenance-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .maintenance-text {
+        font-size: 0.85rem;
+    }
+}
    
 </style>
 
@@ -703,6 +764,22 @@
             </div>
 
         </section>
+
+
+                <!-- ================= MAINTENANCE NOTICE ================= -->
+        <div class="maintenance-notice">
+            <div class="maintenance-content">
+                <span class="maintenance-icon">⚠</span>
+                <div class="maintenance-text">
+                    <strong><h1> Maintenance Notice: </h1></strong>
+                    <h3> Our website is currently under scheduled maintenance. 
+                    Registration services are temporarily unavailable. 
+                    Please do not attempt to make any registrations at this time. 
+                    An official announcement will be made once the maintenance process is completed. 
+                    We appreciate your patience and understanding. </h3>
+                </div>
+            </div>
+        </div>
 
     </div>
 
