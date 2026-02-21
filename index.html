@@ -365,6 +365,24 @@
         gap: 2.5rem;
     }
 
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        justify-items: center;
+    }
+
+    .events-grid .card {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    /* If last row has single card — center it */
+    .events-grid .card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
     /* Cards */
     .card {
         background: var(--card-bg);
@@ -372,11 +390,25 @@
         border-radius: 28px;
         padding: 2.5rem;
         transition: 0.4s;
+        width: 100%;
+        max-width: 600px;
     }
 
     .card:hover {
         transform: translateY(-10px);
         background: rgba(20, 20, 20, 0.8);
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        justify-items: center;
+    }
+
+    .cards-container .card:last-child {
+        grid-column: 1 / -1;
+        max-width: 600px; /* adjust to match other cards width */
     }
 
     /* Detail Grid */
@@ -889,7 +921,8 @@
         prompt: { file: "prompt-writing.html" },
         debugging: { file: "debugging.html" },
         techhunt: { file: "techhunt.html" },
-        esports: { file: "photography-esports.html" }
+        photography: { file: "photography.html" },
+        esports: { file: "esports.html" }
     };
 
     // ===============================
@@ -1008,14 +1041,38 @@
                     </svg>
                 </div>
                 <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">
-                    CREATIVITY & COMPETITIVE GAMING
+                    COMPETITIVE GAMING
                 </div>
-                <h3>Photography & E-Sports</h3>
+                <h3>E-Sports</h3>
                 <p>Enter the battlefield.</p>
+                <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    Compete & Win <span style="font-size: 1.2rem;">→</span>
+                </div>
+            </div>
+
+           <div class="card" onclick="openEventPage('photography')">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 7h4l2-2h4l2 2h4v12H4z"/>
+                        <circle cx="12" cy="13" r="4"/>
+                    </svg>
+                </div>
+
+                <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">
+                    CREATIVE SHOWCASE
+                </div>
+
+                <h3>Photography</h3>
+
+                <p>
+                    Frame innovation. Capture moments that define the spirit of the marathon.
+                </p>
+
                 <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
                     Capture & Compete <span style="font-size: 1.2rem;">→</span>
                 </div>
             </div>
+
         `;
     }
 
