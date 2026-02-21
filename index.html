@@ -12,7 +12,7 @@
     :root {
         --bg: #000000;
         --text: #ffffff;
-        --primary: #8b5cf6;
+        --primary: #ffbb00;
         --secondary: #06b6d4;
         --accent: #f43f5e;  
         --glass: rgba(255, 255, 255, 0.03);
@@ -745,6 +745,151 @@
         padding: 4px 8px;
         border-radius: 4px;
     }
+
+
+
+
+    /* ============================= */
+    /* FAANG LEVEL SCHEDULE SECTION  */
+    /* ============================= */
+
+    #schedule-section {
+        padding: 120px 8%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .schedule-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .schedule-header h2 {
+        font-size: 3rem;
+        font-family: var(--font-heading);
+        letter-spacing: -1px;
+    }
+
+    .schedule-header p {
+        color: #888;
+        margin-top: 1rem;
+    }
+
+    /* Timeline Container */
+    .timeline {
+        position: relative;
+        margin-top: 3rem;
+    }
+
+    /* Vertical Line */
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(var(--primary), var(--secondary));
+        opacity: 0.4;
+    }
+
+    /* Timeline Item */
+    .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 2rem 3rem;
+        box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+
+    /* Glass Card */
+    .timeline-content {
+        background: var(--card-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 1.8rem;
+        transition: 0.4s ease;
+        backdrop-filter: blur(20px);
+    }
+
+    .timeline-content:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary);
+        box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Time Badge */
+    .time-badge {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    /* Dot */
+    .timeline-item::after {
+        content: "";
+        position: absolute;
+        top: 35px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--primary);
+        box-shadow: 0 0 15px var(--primary);
+    }
+
+    .timeline-item:nth-child(odd)::after {
+        right: -8px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+        left: -8px;
+    }
+
+    /* Day Divider */
+    .day-divider {
+        text-align: center;
+        margin: 5rem 0 3rem;
+        font-weight: 800;
+        font-size: 1.3rem;
+        color: var(--primary);
+        letter-spacing: 1px;
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 768px) {
+
+        .timeline::before {
+            left: 8px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 2.5rem;
+            padding-right: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+            left: 0;
+            text-align: left;
+        }
+
+        .timeline-item::after {
+            left: 0;
+        }
+    }
    
 </style>
 
@@ -959,6 +1104,104 @@
                 <div class="events-grid" id="events-list">
                     <!-- Events injected by JS -->
                 </div>
+            </section>
+
+            <!-- ================= SCHEDULE SECTION ================= -->
+            <section id="schedule-section">
+
+                <div class="schedule-header">
+                    <h2>Schedule</h2>
+                    <p>Strategically designed programming delivered across two power-packed days.</p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="day-divider">24th February 2026 — Day 1</div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">10:00 AM</div>
+                            <h3>Inauguration & Lamp Lighting</h3>
+                            <p>Formal opening ceremony with dignitaries and institutional leaders.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">10:10 AM</div>
+                            <h3>Classical Performance</h3>
+                            <p>Traditional cultural performance marking the ceremonial beginning.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">10:20 AM – 11:30 AM</div>
+                            <h3>Dignitary Address & Innovation Briefing</h3>
+                            <p>Welcome address, event overview, and strategic vision of the Innovation Hackathon.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">11:35 AM – 12:00 PM</div>
+                            <h3>Official Event Kickoff</h3>
+                            <p>Instructions to participants and commencement of competitive events.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">12:10 PM – 12:45 PM</div>
+                            <h3>Networking Lunch</h3>
+                            <p>Interaction opportunity for participants, mentors, and faculty.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">1:00 PM – 4:00 PM</div>
+                            <h3>Parallel Technical Events</h3>
+                            <p>Innovation Hackathon, Debugging, Prompt Writing, Tech Hunt, E-Sports & more conducted simultaneously.</p>
+                        </div>
+                    </div>
+
+                    <div class="day-divider">25th February 2026 — Day 2</div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">09:30 AM</div>
+                            <h3>Continuation of Events</h3>
+                            <p>Completion of remaining competitions and evaluations.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">11:30 AM</div>
+                            <h3>Closing Keynote</h3>
+                            <p>Insights from leadership on innovation, entrepreneurship and future technologies.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">12:00 PM</div>
+                            <h3>Prize Distribution Ceremony</h3>
+                            <p>Recognition of winners and top-performing teams.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="time-badge">12:30 PM</div>
+                            <h3>Vote of Thanks</h3>
+                            <p>Formal closure and gratitude to participants, organizers, and sponsors.</p>
+                        </div>
+                    </div>
+
+                </div>
+
             </section>
         </div>
 
