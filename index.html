@@ -551,6 +551,16 @@
             grid-column: auto;
         }
 
+        /* Hide desktop nav on mobile */
+    .nav-desktop {
+        display: none;
+    }
+
+    /* Show mobile menu button */
+    .nav-mobile {
+        display: block;
+    }
+
     }
 
 
@@ -647,39 +657,68 @@
         cursor: pointer;
     }
 
-    .mobile-menu {
-        position: absolute;
-        top: 120%;
-        left: 50%;
-        transform: translateX(-50%);
-        display: none;
+    /* ================= MOBILE SIDEBAR ================= */
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(6px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+        z-index: 999;
+    }
+
+    .mobile-sidebar {
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 240px;
+        height: 100vh;
+        background: #111;
+        display: flex;
         flex-direction: column;
-        gap: 0.6rem;
+        padding: 2rem;
+        gap: 1.2rem;
+        transition: 0.35s ease;
         z-index: 1000;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.6);
     }
 
-    .mobile-menu a {
-        background: #e3342f;
-        color: #000000;
-        padding: 0.6rem 1.2rem;
-        border-radius: 12px;
-        font-weight: 800;
+    .mobile-sidebar a {
+        color: #fff;
         text-decoration: none;
-        text-align: center;
+        font-weight: 700;
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.05);
+        transition: 0.3s;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-        .nav-desktop {
+    .mobile-sidebar a:hover {
+        background: #e3342f;
+        color: #000;
+    }
+
+    /* Active State */
+    .mobile-sidebar.active {
+        right: 0;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Only Mobile */
+    @media (min-width: 769px) {
+        .mobile-sidebar,
+        .menu-overlay {
             display: none;
         }
-
-        .nav-mobile {
-            display: block;
-        }
     }
-
-
+    
 
 
     /* ================= MAINTENANCE NOTICE ================= */
@@ -979,13 +1018,17 @@
             <!-- Mobile -->
             <div class="nav-mobile">
                 <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+            </div>
 
-                <div class="mobile-menu" id="mobileMenu">
-                    <a href="#home-page" onclick="toggleMenu()">Home</a>
-                    <a href="#about-section" onclick="toggleMenu()">About</a>
-                    <a href="#schedule-section" onclick="toggleMenu()">Schedule</a>
-                    <a href="#events-section" onclick="toggleMenu()">Explore Events</a>
-                </div>
+            <!-- Overlay -->
+            <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+            <!-- Sidebar -->
+            <div class="mobile-sidebar" id="mobileSidebar">
+                <a href="#home-page" onclick="toggleMenu()">Home</a>
+                <a href="#about-section" onclick="toggleMenu()">About</a>
+                <a href="#schedule-section" onclick="toggleMenu()">Schedule</a>
+                <a href="#events-section" onclick="toggleMenu()">Explore Events</a>
             </div>
 
         </section>
@@ -1499,9 +1542,15 @@
     }
 
     function toggleMenu() {
-        const menu = document.getElementById("mobileMenu");
-        if (!menu) return;
-        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        const sidebar = document.getElementById("mobileSidebar");
+        const overlay = document.getElementById("menuOverlay");
+
+        sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
+
+        // Lock scroll when open
+        document.body.style.overflow =
+            sidebar.classList.contains("active") ? "hidden" : "auto";
     }
 
     function openEventPage(eventId) {
