@@ -244,13 +244,14 @@
 
     .hero {
         position: relative;
-        min-height: 90vh;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         overflow: hidden;
-        padding: 60px 20px;
+
+        /* Controlled vertical spacing */
+        padding: clamp(60px, 8vh, 120px) 20px;
     }
 
     .hero-bg-image {
@@ -933,14 +934,6 @@
         visibility: visible;
     }
     
-    /* ================= DESKTOP HERO HEIGHT FIXED HERE ================= */
-    @media (min-width: 1024px) {
-        .hero {
-            min-height: clamp(400px, 48vh, 550px);
-            padding: 20px 10px;
-        }
-    }
-
 </style>
 
 </head>
