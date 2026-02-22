@@ -614,9 +614,10 @@
 
     .nav-strip {
         width: 100%;
-        padding: 1.5rem 0;
+        padding: 1.5rem 5%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
     }
 
     /* Desktop */
@@ -658,15 +659,27 @@
             display: block !important;
         }
     }
-    
+
     .menu-btn {
         background: #e3342f;
-        color: #000000;
         border: none;
         padding: 0.8rem 2.2rem;
         border-radius: 16px;
         font-weight: 900;
         cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .hamburger {
+        color: #ffffff;   /* white ☰ */
+        font-size: 1.4rem;
+    }
+
+    .menu-text {
+        color: #000000;   /* black Explore */
     }
 
     /* ================= MOBILE SIDEBAR ================= */
@@ -987,27 +1000,6 @@
         font-size: 0.8rem;
         margin-top: 4px;
     }
-
-
-    .menu-btn {
-        background: transparent;
-        border: none;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-    
-    .hamburger {
-        color: white;
-        font-size: 1.4rem;
-    }
-    
-    .menu-text {
-        color: black;
-    }
     
 </style>
 
@@ -1050,10 +1042,7 @@
 
             <!-- Mobile -->
             <div class="nav-mobile">
-                <button class="menu-btn" onclick="toggleMenu()">
-                    <span class="hamburger">☰</span>
-                    <span class="menu-text">Explore</span>
-                </button>
+                <button class="menu-btn" onclick="toggleMenu()">Menu</button>
             </div>
 
             <!-- Overlay -->
