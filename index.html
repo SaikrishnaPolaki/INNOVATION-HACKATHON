@@ -556,7 +556,7 @@
         display: none;
     }
 
-    /* Show mobile menu button */
+    /* Show mobile  button */
     .nav-mobile {
         display: block;
     }
@@ -667,7 +667,7 @@
         border-radius: 16px;
         font-weight: 900;
         cursor: pointer;
-
+        margin-left: auto;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -1042,7 +1042,10 @@
 
             <!-- Mobile -->
             <div class="nav-mobile">
-                <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+                <button class="menu-btn" onclick="toggleMenu()">
+                <span class="hamburger">☰</span>
+                <span class="menu-text">Explore</span>
+            </button>
             </div>
 
             <!-- Overlay -->
