@@ -987,6 +987,27 @@
         font-size: 0.8rem;
         margin-top: 4px;
     }
+
+
+    .menu-btn {
+        background: transparent;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .hamburger {
+        color: white;
+        font-size: 1.4rem;
+    }
+    
+    .menu-text {
+        color: black;
+    }
     
 </style>
 
@@ -1029,7 +1050,10 @@
 
             <!-- Mobile -->
             <div class="nav-mobile">
-                <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+                <button class="menu-btn" onclick="toggleMenu()">
+                    <span class="hamburger">☰</span>
+                    <span class="menu-text">Explore</span>
+                </button>
             </div>
 
             <!-- Overlay -->
