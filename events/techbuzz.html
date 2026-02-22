@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Tech Buzz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
             --bg: #030303;
             --text: #ffffff;
-            --glass: rgba(255,255,255,0.03);
-            --glass-border: rgba(255,255,255,0.08);
-            --card-bg: rgba(10,10,10,0.6);
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(10, 10, 10, 0.6);
             --font-main: 'Plus Jakarta Sans', sans-serif;
             --font-heading: 'Space Grotesk', sans-serif;
         }
@@ -49,7 +52,8 @@
         header {
             position: fixed;
             top: 20px;
-            right: 35px;      /* ← adjust this value to move more/less right */
+            right: 35px;
+            /* ← adjust this value to move more/less right */
             background: transparent;
             border: none;
             padding: 0;
@@ -84,8 +88,8 @@
 
         .hero-badge {
             padding: 6px 16px;
-            background: rgba(139,92,246,0.1);
-            border: 1px solid rgba(139,92,246,0.2);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
             color: var(--primary);
             border-radius: 100px;
             font-size: 0.75rem;
@@ -129,22 +133,25 @@
             border-radius: 28px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            transition: all 0.5s cubic-bezier(0.2,1,0.3,1);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: rgba(255,255,255,0.2);
-            background: rgba(20,20,20,0.8);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(20, 20, 20, 0.8);
         }
 
-    
-        .card p, .card li {
-            color: #ffffff; /*Change Color For The Content Of Each Section*/
+
+        .card p,
+        .card li {
+            color: #ffffff;
+            /*Change Color For The Content Of Each Section*/
             line-height: 1.8;
         }
 
-        ul, ol {
+        ul,
+        ol {
             padding-left: 1.2rem;
         }
 
@@ -175,7 +182,7 @@
 
         .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255,255,255,0.2);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
@@ -199,9 +206,11 @@
             text-decoration: none;
 
             background: linear-gradient(180deg, #ff3b3b, #d80000);
-            border-radius: 14px; /* 👈 single clean rounded edge */
+            border-radius: 14px;
+            /* 👈 single clean rounded edge */
 
-            box-shadow: none; /* 👈 removes extra square/glow */
+            box-shadow: none;
+            /* 👈 removes extra square/glow */
 
             transition: transform 0.25s ease, background 0.25s ease;
         }
@@ -215,204 +224,337 @@
             transform: translateY(0);
         }
 
+        code {
+            background-color: #111;
+            color: #00ffcc;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
-            header { width: 95%; padding: 0.8rem 1.2rem; }
+            header {
+                width: 95%;
+                padding: 0.8rem 1.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="glow-sphere" style="top:-10%;left:-10%;"></div>
-<div class="glow-sphere" style="bottom:-10%;right:-10%;background:var(--secondary);"></div>
+    <div class="glow-sphere" style="top:-10%;left:-10%;"></div>
+    <div class="glow-sphere" style="bottom:-10%;right:-10%;background:var(--secondary);"></div>
 
-<header>
-    <a href="../index.html" class="back-btn"> Back to Home</a>
-</header>
+    <header>
+        <a href="../index.html" class="back-btn"> Back to Home</a>
+    </header>
 
-<section class="hero">
-    <h1>Tech Buzz</h1>
-    <p>Add The Suitable Statement About This Event.</p>
-</section>
-<div class="section-container">
+    <section class="hero">
+        <h1>Tech Buzz</h1>
+        <p>Compete with Code. Conquer with Logic.</p> 
+    </section>
 
-    <h2 class="section-title">Event Objective</h2>
-    <div class="card">
-         <p>
-            
-        </p>
-    </div>
+    <div class="section-container">
 
-    <h2 class="section-title">Date & Venue</h2>
-    <div class="card">
-        <ul>
-            <li><strong>Date 📅:</strong> </li> 
-            <li><strong>Venue 📍:</strong> </li> 
-        </ul>
-    </div>
-    
-    <h2 class="section-title">Event Duration & Structured Timeline</h2>
+        <h2 class="section-title">Event Objective</h2>
 
-    <div class="card">
+        <div class="card">
+            <p>
+                Tech Buzz is a high-energy, multi-round technical quiz designed to reinforce foundational programming concepts through structured competitive engagement. The event aims to strengthen core programming fundamentals in C, Python and Java while promoting quick thinking, analytical reasoning, and collaborative problem-solving within teams of 5–6 members. Through timed rounds, structured “pass” mechanics, and fair scoring systems, the competition fosters active participation, strategic decision-making, and a strong competitive spirit within a dynamic technical environment.
+            </p>
+        </div>
 
-        
+        <h2 class="section-title">Date & Venue</h2>
 
-    </div>
-
-
-    <h2 class="section-title">Team Formation</h2>
-    <div class="card">
-        <ul>
-            <p> </p> 
-        </ul>
-    </div>
-  
-    <h2 class="section-title">Complete Activity Workflow</h2>
-    <div class="card">
-    <ul>
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-    </ul>
-</div>
-
-
-<h2 class="section-title">Judging Criteria</h2>
-<div class="card">
-    <ul>
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-        
-        
-    </ul>
-</div>
-
-<h2 class="section-title">Rules & Guidelines</h2>
-<div class="card">
-    <ol>
-        <ul>
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                Participants are advised to read all guidelines carefully. Instructions will not be repeated during the event.
-            </li>
-        </ul>
-    </ol>
-
-    <p class="highlight-warning">
-        Please read the complete guidelines carefully. No repetition of instructions will be provided during the activity.
-    </p>
-</div>
-
-  <h2 class="section-title">Activity Coordinator</h2>
-    <div class="card">
-       <h2>Faculty Coordinators</h2>
+        <div class="card">
             <ul>
-                <li></li>
+                <li>
+                    <strong>Date:</strong> 
+                    <code>24 February 2026</code>
+                </li>
+
+                <li>
+                    <strong>Time:</strong> 
+                    <code>1:00 PM – 4:00 PM</code>
+                </li>
+
+                <li>
+                    <strong>Venue 📍:</strong> 
+                    D-Block Auditorium
+                </li>
+
+                <li>
+                    ⚠️ Participants must report at least <strong>15 minutes</strong> before the scheduled time.
+                </li>
+            </ul>
+        </div>
+
+
+       <h2 class="section-title">Event Duration & Structured Timeline</h2>
+
+        <div class="card">
+
+            <p class="event-intro">
+                <strong>Tech Buzz 2026</strong> is a structured three-hour competitive technical quiz 
+                conducted from <code>1:00 PM – 4:00 PM</code>. The competition consists of 
+                three progressive rounds, each designed to test core programming knowledge, 
+                analytical reasoning, and adaptability under time constraints.
+            </p>
+
+            <ul class="timeline-list">
+
+                <br>
+                <li>
+                    <strong>Round 1 – The C-Foundation (MCQs)</strong><br>
+
+                    <strong>Focus:</strong> Core concepts of C Programming<br>
+                    • Topics include data types, loops, pointers, and memory management.<br>
+                    • Questions will be displayed for the entire auditorium.<br>
+                    • Teams must signal to answer within the allotted time.
+                </li>
+
+                <br> <br>
+                <li>
+                    <strong>Round 2 – Logic & Architecture</strong><br>
+
+                    <strong>Focus:</strong> Structural and logical reasoning<br>
+                    • Identify errors in code snippets or predict outputs.<br>
+                    • Interpret flowcharts and determine logical progression.<br>
+                    • Analytical complexity increases from Round 1.
+                </li>
+
+                <br> <br>
+                <li>
+                    <strong>Round 3 – The Rapid-Fire Language Mix</strong><br>
+
+                    <strong>Focus:</strong> Multi-language fundamentals<br>
+                    • Covers basics across various programming languages.<br>
+                    • Tests versatility, speed, and adaptability.<br>
+                    • Strict time limits will be enforced.
+                </li>
+
+            </ul>
+
+
+            <br> <br>
+            <p class="event-note">
+                <strong>Rules of Engagement:</strong><br>
+                • The competition follows a progressive difficulty structure.<br>
+                • The “Pass Rule” applies if a team fails to answer within the time limit.<br>
+                • 1 mark will be awarded for every correct answer.<br>
+                • Bonus points may be awarded for intercepted answers during a pass.<br>
+            </p>
+
+            <br>
+            <p> <h4> This structured schedule ensures smooth execution and fair participation. </h4></p>
+
+        </div>
+
+
+
+        <h2 class="section-title">Team Formation</h2>
+
+        <div class="card">
+            <ul>
+                <li>
+                    Each team must consist of a minimum of <strong>5 members</strong> and a maximum of <strong>6 members</strong>.
+                </li>
+
+                <li>
+                    The event is limited to a maximum of <strong>18 teams only</strong>.
+                </li>
+
+                <li>
+                    Entries will be accepted strictly on a 
+                    <strong>First Come, First Served (FCFS)</strong> basis.
+                </li>
+
+                <li>
+                    Registration will close once <strong>18 teams</strong> are confirmed.
+                </li>
+
+                <li>
+                    A participant may be part of <strong>only one team</strong>.
+                </li>
+
+                <li>
+                    Each team must submit their <strong>team name</strong> during registration.
+                </li>
+            </ul>
+        </div>
+
+
+
+
+       <h2 class="section-title">Complete Event Workflow</h2>
+
+       <div class="card">
+            <ul>
+
+                <li>
+                    <strong>Step 1 – Registration:</strong> 
+                    Teams will register under the <strong>First Come, First Served (FCFS)</strong> policy. 
+                    Participation will be confirmed for the first <strong>18 registered teams</strong>.
+                </li>
+
+                <li>
+                    <strong>Step 2 – Reporting & Verification:</strong> 
+                    Registered teams must report on time for attendance verification 
+                    and seating allocation in the auditorium.
+                </li>
+
+                <li>
+                    <strong>Step 3 – Round 1 Execution (C-Foundation MCQs):</strong> 
+                    The C Programming multiple-choice round will be conducted, 
+                    and scores will be recorded systematically.
+                </li>
+
+                <li>
+                    <strong>Step 4 – Round 2 Execution (Logic & Architecture):</strong> 
+                    The Java and Flowchart-based logic round will be conducted, 
+                    and cumulative scores will be updated.
+                </li>
+
+                <li>
+                    <strong>Step 5 – Round 3 Execution (Rapid-Fire Language Mix):</strong> 
+                    The final rapid-fire round covering multiple programming languages 
+                    will be conducted, and final scores will be calculated.
+                </li>
+
+                <li>
+                    <strong>Step 6 – Result Compilation:</strong> 
+                    Total cumulative scores from all three rounds will be verified 
+                    and consolidated.
+                </li>
+
+                <li>
+                    <strong>Step 7 – Winner Announcement:</strong> 
+                    On <code>25th November 2026</code>, the team securing the highest total score will be declared as 
+                    <strong>Tech Buzz Winners.</strong>
+                </li>
+
+            </ul>
+       </div>
+
+
+        <h2 class="section-title">Scoring & Winning Criteria</h2>
+
+        <div class="card">
+            <ul>
+                <li>
+                    <strong>1 Mark per Correct Answer:</strong><br>
+                    Each correct response across all rounds will be awarded <strong>1 mark</strong>.
+                </li>
+
+                <li>
+                    <strong>Bonus Marks (Pass Rule):</strong><br>
+                    Additional marks will be awarded to teams that correctly answer a question 
+                    passed from another team.
+                </li>
+
+                <li>
+                    <strong>No Negative Marking:</strong><br>
+                    No marks will be deducted for incorrect answers unless otherwise announced 
+                    before the commencement of the round.
+                </li>
+
+                <li>
+                    <strong>Winning Determination:</strong><br>
+                    The team securing the highest cumulative score across all three rounds 
+                    will be crowned the <strong>Tech Buzz Champions</strong>.
+                </li>
+
+                <li>
+                    The decision of the quiz panel and event coordinators will be final and binding.
+                </li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">Rules & Guidelines</h2>
+
+        <div class="card">
+            <ol>
+
+                <h3>General Rules</h3>
+                <ul>
+                    <li>
+                        Participants must report at least <strong>15 minutes</strong> before the scheduled start time.
+                    </li>
+
+                    <li>
+                        Teams must answer within the given time limit announced for each question.
+                    </li>
+
+                    <li>
+                        Only <strong>one final answer</strong> is permitted per question.
+                    </li>
+
+                    <li>
+                        Any form of misconduct, indiscipline, or unfair practice will result in immediate disqualification.
+                    </li>
+
+                    <li>
+                        The decisions of the judges and the quiz master will be final and binding.
+                    </li>
+                </ul>
+
+                <h3>Quiz Mechanics</h3>
+                <ul>
+                    <li>
+                        The <strong>Pass Rule</strong> applies during all applicable rounds.
+                    </li>
+
+                    <li>
+                        If a team fails to answer within the allotted time, the question will pass 
+                        to the next team in sequence.
+                    </li>
+
+                    <li>
+                        Passed questions must also be answered within the specified time limit.
+                    </li>
+                </ul>
+
+            </ol>
+
+            <p class="highlight-warning">
+                Participants are advised to read and understand all rules carefully. 
+                Failure to comply with the above guidelines may lead to disqualification.
+            </p>
+
+        </div>
+
+
+        <h2 class="section-title">Event Coordinator</h2>
+        <div class="card">
+            <h2>Faculty Coordinators</h2>
+            <ul>
+                <li> YVD Chandra Sekhar </li>
             </ul>
 
             <h2>Student Coordinators</h2>
             <ul>
-                <li><li>
-                <li><li>
-                <li><li>
-                <li><li>
+                <li> B. DEEPTHI </li>
+                <li> G. BHAVANI </li>
+                <li> P. NANDINI </li>
+                <li> K. NALINI </li>
+                <li> P. VINAY </li>
+                <li> A. PALLAVI </li>
+                <li> G. NITHYA </li>
                 
             </ul>
+        </div>
+        
+        <div class="btn-wrapper">
+            <a href="https://forms.gle/wbvwChRoaNrzWZ9q9" target="_blank" class="btn">Register Now</a>
+        </div>
+
     </div>
-   
-    
-    <div class="btn-wrapper">
-        <a href="https://forms.gle/wbvwChRoaNrzWZ9q9" target="_blank" class="btn">Register Now</a>
 
-
-    </div>
-
-</div>
-
-
-<footer>
-    © 2026 KPRES Innovation Marathon. All rights reserved.
-</footer>
+    <footer>
+        © 2026 KPRES Innovation Marathon. All rights reserved.
+    </footer>
 
 </body>
+
 </html>
-
-
-
-
