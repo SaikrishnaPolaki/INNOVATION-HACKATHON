@@ -621,12 +621,7 @@
         position: relative;
     }
 
-    /* Desktop */
-    .nav-desktop {
-        display: flex;
-        gap: 1.2rem;
-    }
-
+    
     .nav-box {
         background: #e3342f;
         color: #ffffff;
@@ -637,20 +632,22 @@
         text-decoration: none;
         transition: 0.25s ease;
     }
-
+    
     .nav-box:hover {
         transform: translateY(-3px);
         opacity: 0.9;
     }
-
-    /* Mobile */
-    .nav-mobile {
-        position: absolute;
-        right: 5%;
+    
+    /* Desktop Default */
+    .nav-desktop {
+        display: flex;
     }
 
+    .nav-mobile {
+        display: none;
+    }
 
-    /* 🔥 MOBILE NAV FIX */
+    /* Mobile */
     @media (max-width: 768px) {
         .nav-desktop {
             display: none !important;
