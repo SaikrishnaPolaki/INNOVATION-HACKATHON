@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Photography</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
             --bg: #030303;
             --text: #ffffff;
-            --glass: rgba(255,255,255,0.03);
-            --glass-border: rgba(255,255,255,0.08);
-            --card-bg: rgba(10,10,10,0.6);
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(10, 10, 10, 0.6);
             --font-main: 'Plus Jakarta Sans', sans-serif;
             --font-heading: 'Space Grotesk', sans-serif;
         }
@@ -49,7 +52,8 @@
         header {
             position: fixed;
             top: 20px;
-            right: 35px;      /* ← adjust this value to move more/less right */
+            right: 35px;
+            /* ← adjust this value to move more/less right */
             background: transparent;
             border: none;
             padding: 0;
@@ -84,8 +88,8 @@
 
         .hero-badge {
             padding: 6px 16px;
-            background: rgba(139,92,246,0.1);
-            border: 1px solid rgba(139,92,246,0.2);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
             color: var(--primary);
             border-radius: 100px;
             font-size: 0.75rem;
@@ -129,22 +133,25 @@
             border-radius: 28px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            transition: all 0.5s cubic-bezier(0.2,1,0.3,1);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: rgba(255,255,255,0.2);
-            background: rgba(20,20,20,0.8);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(20, 20, 20, 0.8);
         }
 
-    
-        .card p, .card li {
-            color: #ffffff; /*Change Color For The Content Of Each Section*/
+
+        .card p,
+        .card li {
+            color: #ffffff;
+            /*Change Color For The Content Of Each Section*/
             line-height: 1.8;
         }
 
-        ul, ol {
+        ul,
+        ol {
             padding-left: 1.2rem;
         }
 
@@ -175,7 +182,7 @@
 
         .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255,255,255,0.2);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
@@ -199,9 +206,11 @@
             text-decoration: none;
 
             background: linear-gradient(180deg, #ff3b3b, #d80000);
-            border-radius: 14px; /* 👈 single clean rounded edge */
+            border-radius: 14px;
+            /* 👈 single clean rounded edge */
 
-            box-shadow: none; /* 👈 removes extra square/glow */
+            box-shadow: none;
+            /* 👈 removes extra square/glow */
 
             transition: transform 0.25s ease, background 0.25s ease;
         }
@@ -215,199 +224,377 @@
             transform: translateY(0);
         }
 
+        code {
+            background-color: #111;
+            color: #00ffcc;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
-            header { width: 95%; padding: 0.8rem 1.2rem; }
+            header {
+                width: 95%;
+                padding: 0.8rem 1.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="glow-sphere" style="top:-10%;left:-10%;"></div>
-<div class="glow-sphere" style="bottom:-10%;right:-10%;background:var(--secondary);"></div>
+    <div class="glow-sphere" style="top:-10%;left:-10%;"></div>
+    <div class="glow-sphere" style="bottom:-10%;right:-10%;background:var(--secondary);"></div>
 
-<header>
-    <a href="../index.html" class="back-btn"> Back to Home</a>
-</header>
+    <header>
+        <a href="../index.html" class="back-btn"> Back to Home</a>
+    </header>
 
-<section class="hero">
-    <h1>Photography</h1>
-    <p>Add The Suitable Statement About This Event.</p>
-</section>
+    <section class="hero">
+        <h1>Photography</h1>
+        <p>Precision in Every Captured Frame.</p>
+    </section>
 
-<div class="section-container">
+    <div class="section-container">
 
-    <h2 class="section-title">Event Objective</h2>
-    <div class="card">
-         <p>
-            
-        </p>
-    </div>
+        <h2 class="section-title">Event Objective</h2>
 
-    <h2 class="section-title">Date & Venue</h2>
-    <div class="card">
-        <ul>
-            <li><strong>Date 📅:</strong> </li> 
-            <li><strong>Venue 📍:</strong> </li> 
-        </ul>
-    </div>
-    
-    <h2 class="section-title">Event Duration & Structured Timeline</h2>
+        <div class="card">
+            <p>
+                The Photography & Videography Competition aims to provide a structured platform for students to showcase their creativity, originality, and storytelling skills through natural visual content. The event emphasizes department-focused representation, promotes authentic and original work.
+            </p>
+        </div>
 
-    <div class="card">
-
-        
-
-    </div>
-
-
-    <h2 class="section-title">Team Formation</h2>
-    <div class="card">
-        <ul>
-            <p> </p> 
-        </ul>
-    </div>
-  
-    <h2 class="section-title">Complete Activity Workflow</h2>
-    <div class="card">
-    <ul>
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-    </ul>
-</div>
-
-
-<h2 class="section-title">Judging Criteria</h2>
-<div class="card">
-    <ul>
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-        
-        
-    </ul>
-</div>
-
-<h2 class="section-title">Rules & Guidelines</h2>
-<div class="card">
-    <ol>
-        <ul>
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                Participants are advised to read all guidelines carefully. Instructions will not be repeated during the event.
-            </li>
-        </ul>
-    </ol>
-
-    <p class="highlight-warning">
-        Please read the complete guidelines carefully. No repetition of instructions will be provided during the activity.
-    </p>
-</div>
-
-  <h2 class="section-title">Activity Coordinator</h2>
-    <div class="card">
-       <h2>Faculty Coordinators</h2>
+        <h2 class="section-title">Date</h2>
+        <div class="card">
             <ul>
-                <li></li>
+                <li>
+                    <strong>Date:</strong> 
+                    <code>24 February 2026 & 25 February 2026</code>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+        <h2 class="section-title">Venue Guidelines📍</h2>
+
+        <div class="card">
+            <ul>
+                <li>
+                    Participants are permitted to capture photographs and video clips within the campus premises; however, strict departmental boundaries must be followed.
+                </li>
+
+                <li>
+                    A participant must capture photos or video clips <strong>only within their own department area</strong>.
+                </li>
+
+                <li>
+                    For example, a <strong>CSE student</strong> is allowed to capture content only inside the <strong>CSE department premises</strong>, including labs, classrooms, infrastructure, and departmental activities.
+                </li>
+
+                <li>
+                    A CSE student is <strong>strictly prohibited</strong> from capturing content inside the <strong>ECE department</strong> or any other department area.
+                </li>
+
+                <li>
+                    Similarly, an <strong>ECE student</strong> must capture content exclusively within the <strong>ECE department premises</strong>.
+                </li>
+
+                <li>
+                    Visiting, entering, or capturing content from any other department area is <strong>strictly prohibited</strong>.
+                </li>
+
+                <li>
+                    Any violation of the above guidelines will result in <strong>immediate disqualification</strong>.
+                </li>
+            </ul>
+        </div>
+
+
+      
+        <h2 class="section-title">Event Duration & Submission Window</h2>
+
+        <div class="card">
+
+            <p class="event-intro">
+                The <strong>Photography & Videography Competition</strong> follows a 
+                structured capture and submission framework. Participants are required to 
+                complete their content creation within the officially permitted time slots 
+                and submit their entries strictly within the designated submission window.
+            </p>
+
+            <ul class="timeline-list">
+                <br>
+                <li>
+                    <strong>Content Capture – 24 February 2026</strong><br>
+                    <code>1:00 PM – 4:00 PM</code>
+                    <br>
+
+                    • Participants may capture photographs and video clips only within this time frame.<br>
+                    • Content must be naturally captured without digital editing.
+                </li>
+
+                <br>
+
+                <li>
+                    <strong>Content Capture – 25 February 2026</strong><br>
+                    <code>9:30 AM – 12:00 PM</code>
+                    <br>
+                    • Participants may capture photographs and video clips only within this time frame.<br>
+                    • Content must be naturally captured without digital editing.
+                </li>
+
+                <br>
+                <li>
+                    <strong>Submission Window – 25 February 2026</strong><br>
+                    <code>12:00 PM – 12:30 PM</code>
+                    <br>
+
+                    • The official URL submission link will be released at <strong>12:00 PM</strong>.<br>
+                    • The link will remain active until <strong>12:30 PM</strong>.<br>
+                    • At sharp <strong>12:30 PM</strong>, the submission link will be closed.<br>
+                    • No late submissions will be accepted under any circumstances.<br>
+
+                    • Participants must upload their photos / video clips before the link closes.
+                </li>
+
+            </ul>
+
+            <p class="event-note">
+                Strict adherence to the timeline is mandatory. Any submission made outside 
+                the official window will be automatically disqualified.
+            </p>
+
+        </div>
+
+
+        <h2 class="section-title">Participant Guidelines</h2>
+
+        <div class="card">
+            <ul>
+                <li>
+                    This is strictly an <strong>Individual Event</strong> (Single Participant Only).
+                </li>
+
+                <li>
+                    Only registered participants are allowed to take part in the competition.
+                </li>
+
+                <li>
+                    The event is open to all students of the college.
+                </li>
+
+                <li>
+                    Entries are limited and will be accepted on a 
+                    <strong>First Come, First Served (FCFS)</strong> basis.
+                </li>
+            </ul>
+        </div>
+
+
+        <h2 class="section-title">Complete Event Workflow</h2>
+
+        <div class="card">
+            <ul>
+
+                <li>
+                    <strong>Step 1 – Registration:</strong> 
+                    The participant must register under the <strong>First Come, First Served (FCFS)</strong> policy. 
+                    Eligibility will be verified upon registration confirmation.
+                </li>
+
+                <li>
+                    <strong>Step 2 – Content Capture (Within Official Time Window Only):</strong> 
+                    Participants must capture photos / video clips strictly within their own department 
+                    and only during the officially permitted time slots.
+                </li>
+
+                <li>
+                    <strong>Step 3 – Content Selection:</strong> 
+                    The participant must select the best original photograph or video clip. 
+                    The selected content must be completely natural and unedited.
+                </li>
+
+                <li>
+                    <strong>Step 4 – URL Link Activation (25 February – 12:00 PM):</strong> 
+                    The official online submission link will be shared at the scheduled time.
+                </li>
+
+                <li>
+                    <strong>Step 5 – Online Submission:</strong> 
+                    Participants must upload their photo / video clip through the provided URL 
+                    and complete submission before <strong>12:30 PM sharp</strong>.
+                </li>
+
+                <li>
+                    <strong>Step 6 – Link Closure (25 February – 12:30 PM):</strong> 
+                    The submission portal will be closed exactly at the scheduled time, 
+                    and no further uploads will be permitted under any circumstances.
+                </li>
+
+                <li>
+                    <strong>Step 7 – Evaluation:</strong> 
+                    Judges will evaluate all entries based on the predefined judging criteria.
+                </li>
+
+                <li>
+                    <strong>Step 8 – Result Announcement & Prize Distribution:</strong> 
+                    In the timeline of <code> 2:50 PM - 4:00 PM </code>on 25 February 2026, winners will be officially declared.
+                </li>
+
+            </ul>
+        </div>
+
+
+        <h2 class="section-title">Judging Criteria</h2>
+
+        <div class="card">
+            <ul>
+                <li>
+                    Entries will be evaluated based on <strong>Creativity & Originality</strong>, reflecting the uniqueness and innovative perspective demonstrated in the captured content.
+                </li>
+
+                <li>
+                    <strong>Relevance to Department</strong> will be assessed to ensure the submission aligns strictly with the participant’s own department.
+                </li>
+
+                <li>
+                    <strong>Composition & Framing</strong> will be evaluated to determine the balance, structure, and visual arrangement within the frame.
+                </li>
+
+                <li>
+                    <strong>Natural Lighting & Clarity</strong> will be considered to assess visibility, sharpness, and effective use of available light without artificial enhancement.
+                </li>
+
+                <li>
+                    <strong>Overall Visual Impact</strong> will measure the overall impression, storytelling strength, and aesthetic appeal of the submission.
+                </li>
+
+                <li>
+                    All submissions will be evaluated collectively, and the participant achieving the highest overall score across all criteria will be declared the winner.
+                </li>
+
+                <li>
+                    The decision of the judges will be final and binding.
+                </li>
+            </ul>
+        </div>
+
+
+        <h2 class="section-title">Rules & Guidelines</h2>
+
+        <div class="card">
+            <ol>
+
+                <h3>General Rules</h3>
+                <ul>
+                    <li>
+                        Photos / video clips must be original and captured strictly during the official time window.
+                    </li>
+
+                    <li>
+                        Strictly <strong>NO editing, filtering, enhancement, or digital manipulation</strong> is allowed.
+                    </li>
+
+                    <li>
+                        Editing of video clips is strictly prohibited.
+                    </li>
+
+                    <li>
+                        Only raw / natural content directly captured from camera or mobile devices will be accepted.
+                    </li>
+
+                    <li>
+                        Content must be department-specific.
+                    </li>
+
+                    <li>
+                        Capturing content from other department areas will lead to immediate disqualification.
+                    </li>
+
+                    <li>
+                        Submission must be completed only through the official URL link provided.
+                    </li>
+
+                    <li>
+                        Late submissions will not be accepted under any circumstances.
+                    </li>
+
+                    <li>
+                        The decision of the judges will be final and binding.
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Department-Specific Rule (Mandatory)</h3>
+                <ul>
+                    <li>
+                        Participants must capture photos or video clips strictly related to their own department.
+                    </li>
+
+                    <li>
+                        For example, a <strong>CSE student</strong> must capture content only within the 
+                        <strong>CSE department area</strong> (labs, classrooms, infrastructure, activities, etc.).
+                    </li>
+
+                    <li>
+                        A <strong>CSE student is strictly not allowed</strong> to capture content from the 
+                        ECE department or any other department area.
+                    </li>
+
+                    <li>
+                        Similarly, an <strong>ECE student</strong> must capture content only within the 
+                        ECE department premises.
+                    </li>
+
+                    <li>
+                        Visiting or capturing content from other department areas is strictly prohibited.
+                    </li>
+
+                    <li>
+                        Any violation of this rule will result in immediate disqualification.
+                    </li>
+                </ul>
+
+            </ol>
+
+            <p class="highlight-warning">
+                Participants are advised to carefully read and strictly adhere to all guidelines. 
+                No exceptions or special considerations will be provided.
+            </p>
+
+        </div>
+
+
+
+        <h2 class="section-title">Event Coordinators</h2>
+        <div class="card">
+            <h2>Faculty Coordinator</h2>
+            <ul>
+                <li>P. Sai Krishna</li>
             </ul>
 
             <h2>Student Coordinators</h2>
             <ul>
-                <li><li>
-                <li><li>
-                <li><li>
-                <li><li>
-                
+                <li> B. Manasa</li>
+                <li> K. Navya</li>
+                <li> K. Meghana</li>
             </ul>
-    </div>
-       
-    <div class="btn-wrapper">
-        <a href="https://forms.gle/PiGLp3r9mC5Mxqsp6" target="_blank" class="btn">Register Now</a>
+        </div>
+
+        <div class="btn-wrapper">
+            <a href="https://forms.gle/PiGLp3r9mC5Mxqsp6" target="_blank" class="btn">Register Now</a>
+        </div>
+
     </div>
 
-</div>
-
-    
-<footer>
-    © 2026 KPRES Innovation Marathon. All rights reserved.
-</footer>
+    <footer>
+        © 2026 KPRES Innovation Marathon. All rights reserved.
+    </footer>
 
 </body>
-</html>
 
+</html>
