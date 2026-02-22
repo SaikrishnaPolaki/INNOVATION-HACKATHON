@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Innovation Hackathon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
             --bg: #030303;
             --text: #ffffff;
-            --glass: rgba(255,255,255,0.03);
-            --glass-border: rgba(255,255,255,0.08);
-            --card-bg: rgba(10,10,10,0.6);
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(10, 10, 10, 0.6);
             --font-main: 'Plus Jakarta Sans', sans-serif;
             --font-heading: 'Space Grotesk', sans-serif;
         }
@@ -49,7 +52,8 @@
         header {
             position: fixed;
             top: 20px;
-            right: 35px;      /* ← adjust this value to move more/less right */
+            right: 35px;
+            /* ← adjust this value to move more/less right */
             background: transparent;
             border: none;
             padding: 0;
@@ -84,8 +88,8 @@
 
         .hero-badge {
             padding: 6px 16px;
-            background: rgba(139,92,246,0.1);
-            border: 1px solid rgba(139,92,246,0.2);
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
             color: var(--primary);
             border-radius: 100px;
             font-size: 0.75rem;
@@ -129,22 +133,25 @@
             border-radius: 28px;
             padding: 2.5rem;
             margin-bottom: 2rem;
-            transition: all 0.5s cubic-bezier(0.2,1,0.3,1);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: rgba(255,255,255,0.2);
-            background: rgba(20,20,20,0.8);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(20, 20, 20, 0.8);
         }
 
-    
-        .card p, .card li {
-            color: #ffffff; /*Change Color For The Content Of Each Section*/
+
+        .card p,
+        .card li {
+            color: #ffffff;
+            /*Change Color For The Content Of Each Section*/
             line-height: 1.8;
         }
 
-        ul, ol {
+        ul,
+        ol {
             padding-left: 1.2rem;
         }
 
@@ -175,7 +182,7 @@
 
         .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255,255,255,0.2);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
         }
 
         /* Footer */
@@ -199,9 +206,11 @@
             text-decoration: none;
 
             background: linear-gradient(180deg, #ff3b3b, #d80000);
-            border-radius: 14px; /* 👈 single clean rounded edge */
+            border-radius: 14px;
+            /* 👈 single clean rounded edge */
 
-            box-shadow: none; /* 👈 removes extra square/glow */
+            box-shadow: none;
+            /* 👈 removes extra square/glow */
 
             transition: transform 0.25s ease, background 0.25s ease;
         }
@@ -215,202 +224,351 @@
             transform: translateY(0);
         }
 
+        code {
+            background-color: #111;
+            color: #00ffcc;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
-            header { width: 95%; padding: 0.8rem 1.2rem; }
+            header {
+                width: 95%;
+                padding: 0.8rem 1.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="glow-sphere" style="top:-10%;left:-10%;"></div>
-<div class="glow-sphere" style="bottom:-10%;right:-10%;background:var(--secondary);"></div>
+    <div class="glow-sphere" style="top:-10%;left:-10%;"></div>
+    <div class="glow-sphere" style="bottom:-10%;right:-10%;background:var(--secondary);"></div>
 
-<header>
-    <a href="../index.html" class="back-btn"> Back to Home</a>
-</header>
+    <header>
+        <a href="../index.html" class="back-btn"> Back to Home</a>
+    </header>
 
-<section class="hero">
-    <h1>Innovation Hackathon</h1>
-    <p>Add The Suitable Statement About This Event.</p>
-</section>
+    <section class="hero">
+        <h1>Innovation Hackathon</h1>
+        <p>Innovate Boldly. Build Impactfully.</p>
+    </section>
 
-<div class="section-container">
+    <div class="section-container">
 
-    <h2 class="section-title">Event Objective</h2>
-    <div class="card">
-         <p>
-            
-        </p>
-    </div>
+        <h2 class="section-title">Event Objective</h2>
 
-    <h2 class="section-title">Date & Venue</h2>
-    <div class="card">
-        <ul>
-            <li><strong>Date 📅:</strong> </li> 
-            <li><strong>Venue 📍:</strong> </li> 
-        </ul>
-    </div>
-    
-    <h2 class="section-title">Event Duration & Structured Timeline</h2>
+        <div class="card">
+            <p>
+                The Innovation Hackathon is a two-day intensive innovation-driven competition designed to provide students with a platform to conceptualize, design, and present original ideas across diverse domains. Participants are encouraged to transform their creativity into structured, feasible solutions that demonstrate technical depth, practical relevance, and forward-thinking vision. The event strengthens collaborative teamwork, enhances technical proficiency, and nurtures an entrepreneurial mindset through strategic planning, structured development, and systematic execution.
+            </p>
+        </div>
 
-    <div class="card">
+        <h2 class="section-title">Date & Venue</h2>
 
-        
-
-    </div>
-
-
-    <h2 class="section-title">Team Formation</h2>
-    <div class="card">
-        <ul>
-            <p> </p> 
-        </ul>
-    </div>
-  
-    <h2 class="section-title">Complete Activity Workflow</h2>
-    <div class="card">
-    <ul>
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-        <li>
-            
-        </li>
-        
-    </ul>
-</div>
-
-
-<h2 class="section-title">Judging Criteria</h2>
-<div class="card">
-    <ul>
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-
-        <li>
-            
-        </li>
-        
-        
-    </ul>
-</div>
-
-<h2 class="section-title">Rules & Guidelines</h2>
-<div class="card">
-    <ol>
-        <ul>
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                
-            </li>
-
-            <li>
-                Participants are advised to read all guidelines carefully. Instructions will not be repeated during the event.
-            </li>
-        </ul>
-    </ol>
-
-    <p class="highlight-warning">
-        Please read the complete guidelines carefully. No repetition of instructions will be provided during the activity.
-    </p>
-</div>
-
-  <h2 class="section-title">Activity Coordinator</h2>
-    <div class="card">
-       <h2>Faculty Coordinators</h2>
+        <div class="card">
             <ul>
-                <li></li>
+                <li>
+                    <strong>Date:</strong> 
+                    <code>24 February 2026 & 25 February 2026</code>
+                </li>
+
+                <li>
+                    <strong>Venue📍:</strong> 
+                    <code> D-Block KPRIT</code>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <h2 class="section-title">Event Duration & Structured Timeline</h2>
+
+        <div class="card">
+
+            <p class="event-intro">
+                The <strong>Innovation Hackathon 2026</strong> is a two-day intensive competition 
+                conducted under strict time constraints. Performance will be evaluated based on 
+                innovation, implementation quality, feasibility, and presentation effectiveness.
+            </p>
+
+            <ul class="timeline-list">
+
+                <br>
+                <li>
+                    <strong>Day 1 – 24 February 2026</strong><br>
+                    <code>1:00 PM – 4:00 PM</code>
+                    <br>
+
+                    <strong>Phase: Idea Submission & Abstract Presentation</strong><br>
+                    
+                    • Teams will submit their selected problem statement.<br>
+                    • Abstract presentation of the proposed solution will be conducted.<br>
+                    • Initial evaluation and feedback will be provided by the judges.
+                </li>
+
+                <br>
+                <li>
+                    <strong>Day 2 – 25 February 2026</strong><br>
+                    <code>9:30 AM – 12:30 PM</code>
+                    <br>
+
+                    <strong>Phase: Prototype, Review, Evaluation & Finalization</strong><br>
+                    • Teams will present their working prototype or implementation model.<br>
+                    • Technical review and feasibility assessment will be conducted.<br>
+                    • Final evaluation, scoring, and ranking will be completed.
+                </li>
+
+            </ul>
+
+            <p class="event-note">
+                Strict adherence to the scheduled timeline is mandatory. All teams are expected 
+                to complete each phase within the allotted time duration.
+            </p>
+
+        </div>
+
+
+        <h2 class="section-title">Team Formation</h2>
+
+        <div class="card">
+            <ul>
+                <li>
+                    Each team must consist of a minimum of <strong>1 member</strong> and a maximum of <strong>3 members</strong>.
+                </li>
+
+                <li>
+                    The event is open to all students of the college.
+                </li>
+
+                <li>
+                    Cross-department teams are permitted.
+                </li>
+
+                <li>
+                    A student may participate in only one team.
+                </li>
+
+            </ul>
+        </div>
+
+
+       <h2 class="section-title">Complete Event Workflow</h2>
+
+        <div class="card">
+            <ul>
+
+                <li>
+                    <strong>Step 1 – Day 1 Reporting & Verification (24 February 2026 | 1:00 PM – 4:00 PM):</strong> 
+                    Participants must report at least <strong>15 minutes before 1:00 PM</strong>. 
+                    Attendance will be recorded, and team verification will be completed.
+                </li>
+
+                <li>
+                    <strong>Step 2 – Idea Submission:</strong> 
+                    Teams must submit their selected problem statement along with the abstract document 
+                    outlining their proposed solution.
+                </li>
+
+                <li>
+                    <strong>Step 3 – Abstract Presentation:</strong> 
+                    Each team will present their idea, including explanation of the problem, 
+                    proposed solution, and feasibility. Judges will provide initial feedback.
+                </li>
+
+                <li>
+                    <strong>Step 4 – Idea Evaluation:</strong> 
+                    Submitted abstracts and presentations will be evaluated by the judging panel.
+                </li>
+
+                <li>
+                    <strong>Step 5 – Day 2 Reporting (25 February 2026 | 9:30 AM – 12:30 PM):</strong> 
+                    Participants must report at least <strong>15 minutes before 9:30 AM</strong>.
+                </li>
+
+                <li>
+                    <strong>Step 6 – Prototype Development / Demonstration:</strong> 
+                    Teams will present their working prototype or implementation model, 
+                    demonstrating key features and functionality.
+                </li>
+
+                <li>
+                    <strong>Step 7 – Technical Review:</strong> 
+                    Judges will review the implementation and evaluate technical feasibility, 
+                    innovation, and potential impact.
+                </li>
+
+                <li>
+                    <strong>Step 8 – Final Presentation & Q&amp;A:</strong> 
+                    Teams will provide a final explanation of their complete solution, 
+                    followed by a question-and-answer session with the judges.
+                </li>
+
+                <li>
+                    <strong>Step 9 – Evaluation & Finalization:</strong> 
+                    Scores will be calculated based on the defined judging criteria, 
+                    and final rankings will be prepared.
+                </li>
+
+                <li>
+                    <strong>Step 10 – Result Announcement:</strong> 
+                    In the timeline of <code> 2:50 PM - 4:00 PM</code> on 25 February 2026, winners will be officially declared.
+                </li>
+
+            </ul>
+        </div>
+
+
+
+        <h2 class="section-title">Judging Criteria</h2>
+
+        <div class="card">
+            <ul>
+                <li>
+                    <strong>Innovation & Creativity – 20%</strong><br>
+                    Evaluation will focus on originality, uniqueness of the idea, and the level of innovation demonstrated in the proposed solution.
+                </li>
+
+                <li>
+                    <strong>Problem Understanding – 15%</strong><br>
+                    Judges will assess the clarity of problem identification and the depth of understanding reflected in the solution approach.
+                </li>
+
+                <li>
+                    <strong>Technical Implementation – 25%</strong><br>
+                    Assessment will include code quality, architecture design, functionality, integration of technologies, and overall technical execution.
+                </li>
+
+                <li>
+                    <strong>Feasibility & Impact – 15%</strong><br>
+                    Evaluation will consider the practicality of implementation, scalability, and the potential real-world impact of the solution.
+                </li>
+
+                <li>
+                    <strong>UI/UX & Design – 10%</strong><br>
+                    User interface structure, user experience flow, accessibility, and visual design consistency will be evaluated.
+                </li>
+
+                <li>
+                    <strong>Presentation & Communication – 15%</strong><br>
+                    Teams will be evaluated on clarity of explanation, confidence, demonstration quality, and ability to answer judges’ questions effectively.
+                </li>
+
+                <li>
+                    The participant/team securing the highest cumulative score across all criteria will be declared the winner.
+                </li>
+
+                <li>
+                    The decision of the judges will be final and binding.
+                </li>
+            </ul>
+        </div>
+
+
+        <h2 class="section-title">Rules & Guidelines</h2>
+
+        <div class="card">
+            <ol>
+
+                <h3>General Rules</h3>
+                <ul>
+                    <li>
+                        Participants must bring their own laptops, chargers, and necessary accessories.
+                    </li>
+
+                    <li>
+                        Any form of misconduct, indiscipline, or violation of event policies will lead to immediate disqualification.
+                    </li>
+
+                    <li>
+                        The decision of the judges will be final and binding.
+                    </li>
+
+                    <li>
+                        No repetition of instructions will be provided during the event. Participants are expected to follow all announced guidelines carefully.
+                    </li>
+
+                    <li>
+                        Participants must report at least <strong>15 minutes</strong> before the scheduled start time.
+                    </li>
+                </ul>
+
+                <br>
+
+                <h3>Technical Rules</h3>
+                <ul>
+                    <li>
+                        All code, designs, and project work must be developed during the official hackathon duration only.
+                    </li>
+
+                    <li>
+                        Pre-built projects or previously developed solutions are strictly prohibited.
+                    </li>
+
+                    <li>
+                        Use of open-source libraries, frameworks, and APIs is permitted; however, proper acknowledgment must be provided if required.
+                    </li>
+
+                    <li>
+                        Internet access may be used for research and development purposes unless otherwise specified by the organizers.
+                    </li>
+
+                    <li>
+                        Any form of plagiarism, copying of another team’s work, or unauthorized collaboration will result in immediate disqualification.
+                    </li>
+
+                    <li>
+                        Teams must be prepared to explain their project architecture, code implementation, and functionality during evaluation.
+                    </li>
+
+                    <li>
+                        The submitted project must be functional at the time of final evaluation.
+                    </li>
+                </ul>
+
+            </ol>
+
+            <p class="highlight-warning">
+                Participants are advised to read and understand all rules carefully. Failure to comply with the above guidelines may result in disqualification.
+            </p>
+
+        </div>
+
+
+        <h2 class="section-title">Event Coordinators</h2>
+        <div class="card">
+            <h2>Faculty Coordinator</h2>
+            <ul>
+                <li>S. Naresh Kumar</li>
             </ul>
 
             <h2>Student Coordinators</h2>
             <ul>
-                <li><li>
-                <li><li>
-                <li><li>
-                <li><li>
-                
+                <li> Deepthi Shreya </li>
+                <li> Shaik Fareena </li>
+                <li> Dheeraj </li>
+                <li> B. Jishnu Priya </li>
+                <li> V. Hasini </li>
+                <li> K. Dinesh </li>
+                <li> B. Pranathi </li>
+                <li> Y. Pranuthi </li>
+                <li> A. Rashmitha </li>
+                <li> B. Saicharan </li>
             </ul>
+        </div>
+
+
+        <div class="btn-wrapper">
+            <a href="https://forms.gle/hrbMZMtKtrvuyrFH8" target="_blank" class="btn">Register Now</a>
+        </div>
+
     </div>
-    
 
-   
-    
-    <div class="btn-wrapper">
-        <a href="https://forms.gle/hrbMZMtKtrvuyrFH8" target="_blank" class="btn">Register Now</a>
-        
-    </div>
-
-</div>
-
-
-<footer>
-    © 2026 KPRES Innovation Marathon. All rights reserved.
-</footer>
+    <footer>
+        © 2026 KPRES Innovation Marathon. All rights reserved.
+    </footer>
 
 </body>
+
 </html>
