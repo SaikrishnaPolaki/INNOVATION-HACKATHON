@@ -616,8 +616,9 @@
         width: 100%;
         padding: 1.5rem 5%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;   /* ✅ Center everything */
         align-items: center;
+        position: relative;
     }
 
     /* Desktop */
@@ -644,8 +645,8 @@
 
     /* Mobile */
     .nav-mobile {
-        display: none;
-        position: relative;
+        position: absolute;
+        right: 5%;
     }
 
 
