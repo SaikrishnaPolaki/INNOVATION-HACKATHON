@@ -822,6 +822,14 @@
     }
 
 
+    .highlight-test-bg {
+        background-color: rgb(0, 255, 213);
+        color: rgb(0, 0, 0);        
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+
 
 
     /* ============================= */
@@ -1039,6 +1047,7 @@
                 <a href="#about-section" class="nav-box">About</a>
                 <a href="#schedule-section" class="nav-box">Schedule</a>
                 <a href="#events-section" class="nav-box">Explore Events</a>
+                <a href="#updates-section" class="nav-box">Recent Updates</a>
             </div>
 
             <!-- Mobile -->
@@ -1058,6 +1067,7 @@
                 <a href="#about-section" onclick="toggleMenu()">About</a>
                 <a href="#schedule-section" onclick="toggleMenu()">Schedule</a>
                 <a href="#events-section" onclick="toggleMenu()">Explore Events</a>
+                <a href="#updates-section" onclick="toggleMenu()">Recent Updates</a>
             </div>
 
         </section>
@@ -1168,7 +1178,7 @@
                 </div>
 
                 <h2 class="patron-title">IIC Coordinators</h2>
-                
+
                 <div class="patron-row">
 
                     <div class="patron-card">
@@ -1241,6 +1251,27 @@
                     <!-- Events injected by JS -->
                 </div>
             </section>
+
+
+            <section id="updates-section" class="section-container">
+                <div class="grid-header">
+                    <h1 style="color: #e3342f;">Recent Updates</h1>
+                    <p>Stay informed with the latest announcements.</p>
+                    <br> <br>
+                </div>
+
+                <div class="events-grid">
+                    <div class="card">
+                        <span class="highlight-test-bg"> Registrations Opened </span> 
+                        <br><br>
+                        <p><strong style="color: #ff00c8;">Follow the information on each event page and register accordingly.</strong></p>
+                    </div>
+
+                    <!-- Add The Recent Updates Here In The Runtime -->
+
+                </div>
+            </section>
+
 
             <!-- ================= SCHEDULE SECTION ================= -->
             <section id="schedule-section">
@@ -1391,7 +1422,7 @@
         </div>
 
         <footer>
-            <div class="logo" style="margin-bottom: 1.5rem;">KPRES-IM-2026</div>
+            <div class="logo" style="margin-bottom: 1.5rem;">KPRES-IH-2026</div>
 
             <div class="kpres-affiliations">
                 <span class="affiliation-label">Powered By</span>
@@ -1409,7 +1440,7 @@
                 </div>
             </div>
 
-            <p style="color: #ffffff;">&copy; 2026 KPRES Innovation Marathon. All rights reserved.</p>
+            <p style="color: #ffffff;">&copy; 2026 KPRES Innovation Hackathon. All rights reserved.</p>
         </footer>
     </div>
 
@@ -1451,7 +1482,7 @@
     // --- Core Engine ---
     function init() {
         renderEvents();
-        handleScroll?.(); // Safe call if handleScroll exists
+        handleScroll?.();
     }
 
     function renderEvents() {
@@ -1468,7 +1499,7 @@
                 <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">
                     FLAGSHIP EVENT
                 </div>
-                <h3>Innovation Hackathon </h3>
+                <h3>Innovation Hackathon</h3>
                 <p>24 Hours. One Prototype. Unlimited Impact.</p>
                 <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
                     <span class="highlight-green-bg"> Enter Hackathon </span> <span style="font-size: 1.2rem;">→</span>
@@ -1555,29 +1586,22 @@
                 </div>
             </div>
 
-           <div class="card" onclick="openEventPage('photography')">
+            <div class="card" onclick="openEventPage('photography')">
                 <div class="card-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 7h4l2-2h4l2 2h4v12H4z"/>
                         <circle cx="12" cy="13" r="4"/>
                     </svg>
                 </div>
-
                 <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 0.5rem;">
                     CREATIVE SHOWCASE
                 </div>
-
                 <h3>Photography</h3>
-
-                <p>
-                    Frame innovation. Capture moments that define the spirit of the marathon.
-                </p>
-
+                <p>Frame innovation. Capture moments that define the spirit of the marathon.</p>
                 <div style="font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
                     <span class="highlight-green-bg"> Capture & Compete </span> <span style="font-size: 1.2rem;">→</span>
                 </div>
             </div>
-
         `;
     }
 
@@ -1588,7 +1612,6 @@
         sidebar.classList.toggle("active");
         overlay.classList.toggle("active");
 
-        // Lock scroll when open
         document.body.style.overflow =
             sidebar.classList.contains("active") ? "hidden" : "auto";
     }
@@ -1603,9 +1626,41 @@
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
+    // ================= FIXED NAV HANDLER =================
+    const navLinks = document.querySelectorAll('.nav-box');
+    const pages = document.querySelectorAll('.page-content');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const targetId = link.getAttribute('href').substring(1);
+            const targetEl = document.getElementById(targetId);
+
+            // If it's a top-level page (has page-content class), switch pages
+            if (targetEl && targetEl.classList.contains('page-content')) {
+                pages.forEach(p => p.classList.remove('active'));
+                targetEl.classList.add('active');
+            }
+            // If it's a section inside the page, scroll to it
+            else if (targetEl) {
+                // Ensure home-page is visible first
+                pages.forEach(p => p.classList.remove('active'));
+                document.getElementById('home-page').classList.add('active');
+
+                // Small delay then smooth scroll
+                setTimeout(() => {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 50);
+            }
+
+            // Update active nav style
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
 
     // ================= BACK TO TOP LOGIC =================
-
     const backToHome = document.querySelector('.back-to-home');
 
     window.addEventListener('scroll', () => {
@@ -1618,8 +1673,9 @@
 
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    }    
+    }
+
     init();
-    </script>
+</script>
 </body>
 </html>
